@@ -1,0 +1,66 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 100%;
+  width: 270px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#briefing{
+  border-bottom: 3px solid black;
+  height: 215px;
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+}
+
+#profiles{
+  z-index: 1;
+  margin-top: 230px;
+}
+
+.profil{
+  border: 1px solid black;
+  cursor: pointer;
+  display: block;
+}
+
+.profil:hover {
+  background-color: #D9D9D9;
+}
+
+.profil > img{
+  width: 120px;
+  float: left;
+}
+.profil > h3{
+  width: 120px;
+  float: left;
+  margin-left: 10px;
+}
+
+.profil > ul{
+  float: left;
+  list-style: none;
+  margin: 0px;
+  padding-left: 20px;
+  width: 250px;
+}
+
+.profil > ul > li {
+  float: left;
+  width: 25%;
+}
+
+.profil > ul > li > img {
+  float: left;
+  width: 50%;
+}
+
+.profil > input {
+  /*visibility: hidden;*/
+}
+
+input[type="radio"]:checked + .profil {
+    border: red 1px solid;
+  }
