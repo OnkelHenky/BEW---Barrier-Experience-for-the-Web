@@ -1,0 +1,25 @@
+{
+    "clarifications":
+    [ 
+       {
+        "Headline":  "Überschrift 1",
+        "Description":  "Text zu Überschrift 1"
+       },
+       {
+        "Headline":  "Überschrift 2",
+        "Description":  "Text zu Überschrift 2"
+       },
+       {
+        "Headline":  "Überschrift 3",
+        "Description":  "Text zu Überschrift 3"
+       },
+       {
+        "Headline":  "Überschrift 4",
+        "Description":  "Text zu Überschrift 4"
+       },
+       {
+        "Headline":  "Überschrift 5",
+        "Description":  "Text zu Überschrift 5"
+       }
+    ]
+}

@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+    font-family:sans-serif;
+}
+
+#categorys {
+    width: 220px;
+}
+
+#categorys form fieldset input{
+    visibility: hidden;
+    display: none;
+}
+
+#categorys form fieldset input:checked+label {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 4px solid black;
+
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    float: left;
+
+    font: 32px Arial, sans-serif;
+}
+
+#categorys form fieldset .category_button {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 2px solid black;
+
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    float: left;
+
+    font: 32px Arial, sans-serif;
+}
+
