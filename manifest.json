@@ -5,16 +5,24 @@
 
 // Extension Information
   "manifest_version": 2,
-  "name": "Point out hidden barriers",
+  "name": "Pohb - Point out hidden barriers",
   "description": "This Extensions search the Sourcecode of Website for hidden barriers. It manipluates the Sourcecode to clarify the barriers and give hints to the user to remove these.",
   "version": "0.1",
   "icons": { "16": "images/icon.png",
              "48": "images/icon.png",
-            "128": "images/icon.png" },
+            "128": "images/icon.png" 
+            },
  // Extension UI
   "browser_action": {
     "default_locale": "en",
     "default_icon":  "images/icon.png",
     "default_title": "Open Simulator - NOT FINAL",
-    "default_popup": "popup.html" }
+    "default_popup": "popup.html" 
+    },
+
+  "sandbox": {
+     "pages": ["popup.js"]
+  }
+
+
 }

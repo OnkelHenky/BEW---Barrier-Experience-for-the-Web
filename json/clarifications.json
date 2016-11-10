@@ -1,25 +1,49 @@
 {
-    "clarifications":
-    [ 
-       {
-        "Headline":  "Überschrift 1",
-        "Description":  "Text zu Überschrift 1"
-       },
-       {
-        "Headline":  "Überschrift 2",
-        "Description":  "Text zu Überschrift 2"
-       },
-       {
-        "Headline":  "Überschrift 3",
-        "Description":  "Text zu Überschrift 3"
-       },
-       {
-        "Headline":  "Überschrift 4",
-        "Description":  "Text zu Überschrift 4"
-       },
-       {
-        "Headline":  "Überschrift 5",
-        "Description":  "Text zu Überschrift 5"
-       }
-    ]
+    "Clarifications_Visuell": {
+        "Function 1": [
+            {
+                "Headline": "Überschrift_1",
+                "Description": "Text zu Überschrift 1",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 2": [
+            {
+                "Headline": "Überschrift_2",
+                "Description": "Text zu Überschrift 2",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 3": [
+            {
+                "Headline": "Überschrift_3",
+                "Description": "Text zu Überschrift 3",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 4": [
+            {
+                "Headline": "Überschrift_4",
+                "Description": "Text zu Überschrift 4",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 5": [
+            {
+                "Headline": "Überschrift_5",
+                "Description": "Text zu Überschrift 5",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ]
+    }
 }
