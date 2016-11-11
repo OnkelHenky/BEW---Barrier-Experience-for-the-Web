@@ -46,20 +46,20 @@ function happy(jsonObject)
 	var Clarification_Array = [];
 	var Clarification_NameArray = [];
 	
-	    $.each(jsonObject,function(Index_cla, clarifications){
-      $.each(clarifications, function(clarification, index_y){
-							Clarification_counter = Clarification_counter + 1;
-	     	$.each(index_y, function(Object_key, Object_value){ 
-									Clarification_Array.push(Object_value.function_name);
-									Clarification_NameArray.push(Object_value.Headline);
-    });
-			});
+	$.each(jsonObject,function(Index_cla, clarifications){
+    	$.each(clarifications, function(clarification, index_y){
+			Clarification_counter = Clarification_counter + 1;
+	    	$.each(index_y, function(Object_key, Object_value){ 
+				Clarification_Array.push(Object_value.function_name);
+				Clarification_NameArray.push(Object_value.Headline);
+    		});
 		});
-		console.log(Clarification_counter);
-		console.log(Clarification_Array);
-		console.log(Clarification_NameArray);
+	});
+	//console.log(Clarification_counter);
+	//console.log(Clarification_Array);
+	//console.log(Clarification_NameArray);
 
-		appendClarifications(Clarification_Array, Clarification_NameArray, Clarification_counter);
+	appendClarifications(Clarification_Array, Clarification_NameArray, Clarification_counter);
 }
 
 
@@ -68,9 +68,9 @@ function happy(jsonObject)
 function writeMustache(template, data, output_position)
 {
     var output = Mustache.render(template, data);
-				var newcontent = output_position.innerHTML + output;
+	var newcontent = output_position.innerHTML + output;
 
-				output_position.innerHTML = newcontent;
+	output_position.innerHTML = newcontent;
 }
 
 //append the Functions to the Clarifications buttons
@@ -95,7 +95,19 @@ function appendClarifications(clarifications_functions, clarification_names, cou
 //Simple Placeholder function
 function function_test()
 {
-	alert("Juhu!");
+	//alert("Juhu!");
+	hello();
+}
+
+function reload_webpage()
+{
+	this.reload();
+}
+
+function hello() {
+  chrome.tabs.executeScript({
+    file: 'js/contentscript.js'
+  }); 
 }
 
 //Wait until document has loaded
