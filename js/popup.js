@@ -99,9 +99,9 @@ function function_test()
 	hello();
 }
 
-function reload_webpage()
+function reload_open_tab()
 {
-	this.reload();
+	chrome.tabs.reload();
 }
 
 function hello() {

@@ -1,3 +1,4 @@
 document.body.style.background = "red";
-alert('hello ' + document.location.href);
+chrome.tab.reload();
+//alert('hello ' + document.location.href);
 
