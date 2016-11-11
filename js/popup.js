@@ -4,7 +4,7 @@ function getJSONdata()
   $.getJSON("../json/clarifications.json", function(json) {
     //console.log("Content of JSON.file", json);
     rollThroughArray(json);
-				happy(json);
+	happy(json);
   });
 }
 
@@ -41,6 +41,7 @@ function rollThroughArray(jsonObject)
 //create Arrays for stored function names
 function happy(jsonObject)
 {
+	console.log("hohoho");
 	var Clarification_counter = 0;
 	var Clarification_Array = [];
 	var Clarification_NameArray = [];
@@ -75,31 +76,31 @@ function writeMustache(template, data, output_position)
 //append the Functions to the Clarifications buttons
 function appendClarifications(clarifications_functions, clarification_names, counter)
 {
-		for (i = 0; i < counter; i++) 
-		{ 
-						console.log(clarifications_functions[i]);
+	for (i = 0; i < counter; i++) 
+	{ 
+		//Adding Dynamical functions to certain Elements
+  		var handler = function(iterator, method)
+		{
+			console.log(iterator);
+			console.log(method[iterator]);
 
-				  //Adding Dynamical functions to certain Elements
-  				var handler = function()
-						{
-							//Eval ist currently not working
-							//eval(clarifications_functions[i]);
-							function_test();
-					};
+			//calls clarifications_functions[i]
+			eval(method[iterator]);
+		};
 
-						document.getElementById(clarification_names[i]).onclick = handler;
-		}
+		document.getElementById(clarification_names[i]).onclick = handler.bind("placeholder", i ,clarifications_functions);
+	}
 }
 
 //Simple Placeholder function
 function function_test()
 {
-		alert("Juhu!");
+	alert("Juhu!");
 }
 
 //Wait until document has loaded
 $(document).ready(function()
 { 
-		//call starting function
-  getJSONdata();
+	//call starting function
+  	getJSONdata();
 });

@@ -4,6 +4,7 @@
             {
                 "Headline": "Überschrift_1",
                 "Description": "Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "function_test()"
@@ -13,6 +14,7 @@
             {
                 "Headline": "Überschrift_2",
                 "Description": "Text zu Überschrift 2",
+                "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "function_test()"
@@ -22,6 +24,7 @@
             {
                 "Headline": "Überschrift_3",
                 "Description": "Text zu Überschrift 3",
+                "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "function_test()"
@@ -31,6 +34,7 @@
             {
                 "Headline": "Überschrift_4",
                 "Description": "Text zu Überschrift 4",
+                "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "function_test()"
@@ -40,6 +44,7 @@
             {
                 "Headline": "Überschrift_5",
                 "Description": "Text zu Überschrift 5",
+                "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "function_test()"
