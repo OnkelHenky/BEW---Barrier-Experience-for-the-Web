@@ -1,0 +1,54 @@
+{
+    "Clarifications_Visuell": {
+        "Function 1": [
+            {
+                "Headline": "Überschrift_12",
+                "Description": "Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 2": [
+            {
+                "Headline": "Überschrift_22",
+                "Description": "Text zu Überschrift 2",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 3": [
+            {
+                "Headline": "Überschrift_32",
+                "Description": "Text zu Überschrift 3",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 4": [
+            {
+                "Headline": "Überschrift_42",
+                "Description": "Text zu Überschrift 4",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ],
+        "Function 5": [
+            {
+                "Headline": "Überschrift_52",
+                "Description": "Text zu Überschrift 5",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "function_test()"
+            }
+        ]
+    }
+}
