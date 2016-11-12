@@ -24,6 +24,15 @@
 
   "permissions": [
     "tabs", "<all_urls>"
-  ]
+  ],
 
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": [
+        "js/contentscript.js",
+        "js/contentscript1.js"
+        ]
+    }
+  ]
 }

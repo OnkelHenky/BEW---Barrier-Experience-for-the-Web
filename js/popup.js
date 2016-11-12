@@ -1,3 +1,15 @@
+//Wait until document has loaded
+$(document).ready(function(){ 
+	//call starting function
+	var categorys = document.getElementsByClassName("category_button");
+	for (var i=0; i < categorys.length; i++)
+	{
+		//console.log("Is something happening?");
+		//console.log(categorys[i]);
+		categorys[i].onclick = function(){ checkRadioValue();}
+	}
+});
+
 //Parse JSON to String Array
 function getJSONdata(clarification_typ)
 { 
@@ -6,8 +18,8 @@ function getJSONdata(clarification_typ)
 
   $.getJSON(json_string, function(json) 
 	{
-  	//console.log("Content of JSON.file", json);
-  	rollThroughArray(json);
+  		//console.log("Content of JSON.file", json);
+  		rollThroughArray(json);
 		happy(json);
   });
 }
@@ -37,7 +49,7 @@ function rollThroughArray(jsonObject){
               //Clarification_Function:     Object_value.function_name //at the moment not in use
             };
 
-            var template = "<div><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Name}}'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label><div>";
+            var template = "<div class='clarification_div'><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Name}}' class='clarification_radiobuttons'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label><div>";
             
             var output_position = document.getElementById('sampleArea');
             
@@ -49,7 +61,6 @@ function rollThroughArray(jsonObject){
 
 //create Arrays for stored function names
 function happy(jsonObject){
-	console.log("hohoho");
 	var Clarification_counter = 0;
 	var Clarification_Array = [];
 	var Clarification_NameArray = [];
@@ -63,7 +74,7 @@ function happy(jsonObject){
 			{ 
 			Clarification_Array.push(Object_value.function_name);
 			Clarification_NameArray.push(Object_value.Headline);
-    	});
+    		});
 		});
 	});
 	//console.log(Clarification_counter);
@@ -98,61 +109,58 @@ function appendClarifications(clarifications_functions, clarification_names, cou
 			eval(method[iterator]);
 		};
 
-		document.getElementById(clarification_names[i]).onclick = handler.bind("placeholder", i ,clarifications_functions);
+		document.getElementById(clarification_names[i]).onclick = handler.bind("this", i ,clarifications_functions);
 	}
 }
 
 //Simple Placeholder function
 function function_test(){
-	//alert("Juhu!");
-	hello();
-}
-
-function reload_open_tab(){
-	chrome.tabs.reload();
-}
-
-function hello(){
   chrome.tabs.executeScript(
 		{
     	file: 'js/contentscript.js'
   	}); 
 }
 
+function function_test1(){
+  chrome.tabs.executeScript(
+		{
+    	file: 'js/contentscript1.js'
+  	}); 
+}
+
+function reload_open_tab(){
+	chrome.tabs.reload();
+}
+
 //Ausgewählte Kategorie wird überprüft.
 function checkRadioValue(){
 	var json_value;
+	var headline_values = document.getElementsByClassName("category_label");
+	console.log(headline_values);
 
 	if(document.getElementById("kat1").checked)
 	{
-			json_value = document.getElementById("kat1").value;
-			console.log("String contains Value: " + json_value);
-			getJSONdata(json_value);
+		json_value = document.getElementById("kat1").value;
+		//console.log("String contains Value: " + json_value);			
+		document.getElementById("clarifications_headline").innerText = headline_values[0].innerText + " clarifications:";
+		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+		//json_value + " clarifications:";
+		getJSONdata(json_value);
 
 	}
 	else if(document.getElementById("kat2").checked)
 	{
-			json_value = document.getElementById("kat2").value;
-			console.log("String contains Value: " + json_value);
-			getJSONdata(json_value);
+		json_value = document.getElementById("kat2").value;
+		document.getElementById("clarifications_headline").innerText = headline_values[1].innerText + " clarifications:";
+		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+		getJSONdata(json_value);
 	}
 	else if(document.getElementById("kat3").checked)
 	{
-			json_value = document.getElementById("kat3").value;
-			console.log("String contains Value: " + json_value);
-			getJSONdata(json_value);
+		json_value = document.getElementById("kat3").value;
+		document.getElementById("clarifications_headline").innerText = headline_values[2].innerText + " clarifications:";
+		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+		getJSONdata(json_value);
 	}
 }
 
-
-//Wait until document has loaded
-$(document).ready(function(){ 
-	//call starting function
-	var categorys = document.getElementsByClassName("category_button");
-	for (var i=0; i < categorys.length; i++)
-	{
-		//console.log("Is something happening?");
-		//console.log(categorys[i]);
-		categorys[i].onclick = function(){ checkRadioValue();}
-	}
-});

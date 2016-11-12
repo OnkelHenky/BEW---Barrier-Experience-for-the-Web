@@ -1,10 +1,11 @@
 body {
     background-color: white;
     font-family:sans-serif;
+    width: 290px;
 }
 
 #categorys {
-    width: 220px;
+    width: 290px;
 }
 
 #categorys form fieldset input{
@@ -44,3 +45,79 @@ body {
     font: 32px Arial, sans-serif;
 }
 
+.category_div {
+    width: 78px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.category_label {
+    width: 65px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.clarification_radiobuttons {
+    display: none;
+}
+
+#clarifications {
+    width: 290px;
+}
+
+#clarifications form fieldset input{
+    visibility: hidden;
+    display: none;
+}
+
+#clarifications form fieldset input:checked+label {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 4px solid black;
+
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    float: left;
+
+    font: 32px Arial, sans-serif;
+}
+
+#clarifications form fieldset .clarification_button {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 2px solid black;
+
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    float: left;
+
+    font: 32px Arial, sans-serif;
+}
+
+.clarification_div{
+    width: 78px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.clarification_label {
+    width: 65px;
+    float: left;
+    text-align: center;
+    margin-top: 5px;
+}

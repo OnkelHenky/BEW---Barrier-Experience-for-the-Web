@@ -1,3 +1,3 @@
-document.body.style.background = "white";
+document.body.style.background = "red";
 //alert('hello ' + document.location.href);
 
