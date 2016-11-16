@@ -30,8 +30,9 @@
     {
       "matches": ["http://*/*"],
       "js": [
-        "js/contentscript.js",
-        "js/contentscript1.js"
+        "js/perception1.js",
+        "js/understandable1.js",
+        "js/operable1.js"
         ]
     }
   ]

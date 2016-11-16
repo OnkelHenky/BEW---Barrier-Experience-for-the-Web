@@ -1,0 +1,14 @@
+{
+    "Operable_clarifications": {
+        "Function 1": [
+            {
+                "Headline": "Überschrift_11",
+                "Description": "Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "operable1()"
+            }
+        ]
+    }
+}

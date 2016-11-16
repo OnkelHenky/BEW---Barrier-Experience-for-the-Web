@@ -67,6 +67,7 @@ body {
 
 #clarifications {
     width: 290px;
+    display: none;
 }
 
 #clarifications form fieldset input{
