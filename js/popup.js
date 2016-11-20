@@ -61,7 +61,7 @@ function getJSONdata(clarification_typ)
 	{
   		console.log("3: Content of JSON.file", json);
   		rollThroughArray(json);
-		happy(json);
+			happy(json);
   });
 }
 
@@ -86,16 +86,17 @@ function rollThroughArray(jsonObject){
 
               Clarification_Name:         Object_value.Headline,
               Clarification_Description:  Object_value.Description,
+							Clarification_Information:	Object_value.Helping_information,
               Clarification_Image_Source: Object_value.Image_source,
               Clarification_Image_Alt:    Object_value.Image_alt,
-              //Clarification_Function:     Object_value.function_name //at the moment not in use
+              Clarification_Function:     Object_value.function_name //at the moment not in use
             };
 
-            var template = "<div class='clarification_div'><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Name}}' class='clarification_radiobuttons'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label><div>";
+            var template = "<div class='clarification_div'><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Description}}' class='clarification_radiobuttons'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label><div>";
             
             var output_position = document.getElementById('sampleArea');
             
-            writeMustache(template, clarification_data, output_position);
+            writeMustache(template, clarification_data, output_position, 0);
         });
       });
     });
@@ -103,12 +104,21 @@ function rollThroughArray(jsonObject){
 
 //create a Mustache template
 //use Mustache to render a template
-function writeMustache(template, data, output_position){
+function writeMustache(template, data, output_position, type){
   var output = Mustache.render(template, data);
-	var newcontent = output_position.innerHTML + output;
 
-	output_position.innerHTML = newcontent;
-	console.log("5: mustache template wird erstellt.")
+	if(type == 0)
+	{
+			output_position.innerHTML = output_position.innerHTML + output;
+			console.log("5: mustache template wird erstellt.")
+	}
+	else if(type == 1)
+	{
+			output_position.innerHTML = output;
+			console.log("mustache template für infobox wird erstellt.")
+	}
+
+	
 }
 
 //create Arrays for stored function names
@@ -126,9 +136,12 @@ function happy(jsonObject){
 			{ 
 			Clarification_Array.push(Object_value.function_name);
 			Clarification_NameArray.push(Object_value.Headline);
+
     		});
 		});
 	});
+
+
 
 	appendClarifications(Clarification_Array, Clarification_NameArray, Clarification_counter);
 }
@@ -159,6 +172,15 @@ function appendClarifications(clarifications_functions, clarification_names, cou
 	}
 }
 
+function show_clarification_details()
+{
+	//data???
+	var template = "<h2>{{clarification_name}}</h2><div><h3>Description</h3><p>{{Clarification_Description}}</p></div><div><h3>Possible Solutions</h3><p>{{Clarification_Information}}</p></div><button type='button'>start clarification</button>";
+	var output_position = document.getElementById("clarification_details");
+	//writeMustache(template, data, output_position, 1)
+	//appendfunction to button
+}
+
 //Prototype Functions 
 //Simple Placeholder function
 function function_test(){
@@ -181,7 +203,7 @@ function check_https(){
 function security_hint() {
     var decision_value;
     
-	if (confirm(`The following function can destroy the user experience of the site and will reduce your control over the website for 60 seconds. 
+	if (confirm(`The following function can destroy the user experience of the site and will reduce your control over the website. 
 	\nIf you want to escape from the changed enviroment press the F5-Key to reload the page with the default-settings.
 	\n\nclick OK to start the experience or press cancel.`) == true)
 	{
@@ -196,7 +218,6 @@ function security_hint() {
 }
 
 function perception1(){
-  console.log("WTF");
   if(security_hint())
   {
 	chrome.tabs.executeScript(
@@ -207,7 +228,6 @@ function perception1(){
 }
 
 function understandable1(){
-  console.log("WTF");
   if(security_hint())
   {
 	chrome.tabs.executeScript(
@@ -218,7 +238,6 @@ function understandable1(){
 }
 
 function operable1(){
-  console.log("WTF");
   if(security_hint())
   {
 	chrome.tabs.executeScript(

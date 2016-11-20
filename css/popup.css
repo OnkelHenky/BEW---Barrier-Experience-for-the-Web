@@ -122,3 +122,22 @@ body {
     text-align: center;
     margin-top: 5px;
 }
+
+#clarification_details h2{
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: center;
+}
+
+#clarification_details div{
+    width: 45%;
+    margin-left: 4%;
+    float: left;
+}
+
+#clarification_details button {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 70%;
+    height: 35px;
+}
