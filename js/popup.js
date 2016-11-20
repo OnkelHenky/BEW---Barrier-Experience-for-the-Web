@@ -161,35 +161,69 @@ function appendClarifications(clarifications_functions, clarification_names, cou
 
 //Prototype Functions 
 //Simple Placeholder function
-function simplyatest()
-{
-	alert("wuhu");
-}
-
 function function_test(){
 	alert("You could start a clarification with this button.");
 }
 
+function check_https(){
+	var bool;
+	if(location.protocol == 'https:')
+	{
+		bool = true;
+	}
+	else
+	{
+		bool = false;
+	}
+	return bool;
+}
+
+function security_hint() {
+    var decision_value;
+    
+	if (confirm(`The following function can destroy the user experience of the site and will reduce your control over the website for 60 seconds. 
+	\nIf you want to escape from the changed enviroment press the F5-Key to reload the page with the default-settings.
+	\n\nclick OK to start the experience or press cancel.`) == true)
+	{
+        decision_value = true;
+    } 
+	else 
+	{
+        decision_text = false;
+    }
+
+	return decision_value
+}
+
 function perception1(){
   console.log("WTF");
-  chrome.tabs.executeScript(
-		{
-    	file: 'js/perception1.js'
-  	}); 
+  if(security_hint())
+  {
+	chrome.tabs.executeScript(
+			{
+			file: 'js/perception1.js'
+		}); 
+  }
 }
 
 function understandable1(){
   console.log("WTF");
-  chrome.tabs.executeScript(
-		{
-    	file: 'js/understandable1.js'
-  	}); 
+  if(security_hint())
+  {
+	chrome.tabs.executeScript(
+			{
+			file: 'js/perception1.js'
+		}); 
+  }
 }
 
 function operable1(){
   console.log("WTF");
-  chrome.tabs.executeScript(
-		{
-    	file: 'js/operable1.js'
-  	}); 
+  if(security_hint())
+  {
+	chrome.tabs.executeScript(
+			{
+			file: 'js/perception1.js'
+		}); 
+  }
 }

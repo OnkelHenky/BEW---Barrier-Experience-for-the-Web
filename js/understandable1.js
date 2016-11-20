@@ -1,3 +1,4 @@
+console.log("contentscript gets executed.");
 //First get all DOM-Elements with Text inside
 
     var search_terms = [
