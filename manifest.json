@@ -24,16 +24,5 @@
 
   "permissions": [
     "tabs", "<all_urls>"
-  ],
-
-  "content_scripts": [
-    {
-      "matches": ["http://*/*"],
-      "js": [
-        "js/perception1.js",
-        "js/understandable1.js",
-        "js/operable1.js"
-        ]
-    }
   ]
 }

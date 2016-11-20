@@ -38,20 +38,15 @@ function text_to_speech(message)
     document.onkeypress = function (e) {
         e = e || window.event;
         console.log(e);
+        console.log(document.activeElement);
 
         if(e.key == "r")
         {
             try
             {
-                if(document.activeElement.tagName == "body")
+                if(document.activeElement.tagName == "BODY")
                 {
-                    console.log(document.activeElement);
-                    console.log(document.activeElement.tagName);
-                }
-                else if(document.activeElement.tagName == "img")
-                {
-                    console.log(document.activeElement.alt);
-                    text_to_speech(document.activeElement.alt);
+                    console.log("tag: " + document.activeElement.tagName + "ist ausgewählt. Body elemente werden nicht gelesen, da sonst der komplette Webseite Text vorgelesen wird.");
                 }
                 else
                 {         
