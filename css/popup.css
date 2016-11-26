@@ -61,6 +61,10 @@ body {
     margin-top: 5px;
 }
 
+.category_value {
+    display: none;
+}
+
 .clarification_radiobuttons {
     display: none;
 }
