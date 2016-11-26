@@ -21,7 +21,7 @@ function appendBarrierListeners(){
 
 	for (var i=0; i < barriers.length; i++)
 	{
-		//barriers[i].onchange = function(){ //checkRadioValue();}
+		barriers[i].onchange = function(){ showInformationBox();}
 		console.log("Listener für Radionbutton " + barriers[i] + " wurde hinzugefügt.");
 		console.log(barriers[i].id);
 	}
@@ -91,7 +91,7 @@ function create_barrier_buttons(jsonObject){
               				Clarification_Image_Alt:    Object_value.Image_alt,
             			};
 
-            var template = "<div class='clarification_div'><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Description}}' class='clarification_radiobuttons'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label><div>";
+            var template = "<div class='clarification_div'><input type='radio' id='{{Clarification_Name}}' name='clarification' value='{{Clarification_Description}}' class='clarification_radiobuttons'><label class='clarification_button' for='{{Clarification_Name}}'><img src='{{Clarification_Image_Source}}' alt='{{Clarification_Image_Alt}}'></label><label class='clarification_label'>{{Clarification_Name}}</label></div>";
             
             var output_position = document.getElementById('barrier_button_area');
             
@@ -121,64 +121,59 @@ function writeMustache(template, data, output_position, type){
 	}	
 }
 
-/*
-//create Arrays for stored function names
-function happy(jsonObject){
-	var Clarification_counter = 0;
-	var Clarification_Array = [];
-	var Clarification_NameArray = [];
-	
-	$.each(jsonObject,function(Index_cla, clarifications)
-	{
-  	$.each(clarifications, function(clarification, index_y)
-		{
-		Clarification_counter = Clarification_counter + 1;
-	   	$.each(index_y, function(Object_key, Object_value)
-			{ 
-			Clarification_Array.push(Object_value.function_name);
-			Clarification_NameArray.push(Object_value.Headline);
+function showInformationBox()
+{
+	//var selected_id = $('input[name=clarification]:checked', '#clarification_form').val();
+	var selected_id = $('input[name=clarification]:checked', '#clarification_form').attr('id');
+	console.log(selected_id);
 
-    		});
+	//Ändern
+	console.log("Die openJSON function wurde gestartet.");
+	var category_value = document.getElementById("category_value").innerText;
+	console.log("Ausgewählte Kategorie: " + category_value);
+	var json_string = "../json/" + category_value;
+
+  	$.getJSON(json_string, function(jsonObject) 
+		{
+			console.log(jsonObject);
+			//Informationen anzeigen (json);
+			$.each(jsonObject,function(Index_cla, clarifications)
+			{
+				//console.log(Index_cla); //JSON Name
+				//console.log(clarifications); //Shows the clarifications Object with all it´s sub Items
+				$.each(clarifications, function(clarification, index_y)
+					{
+					//console.log(clarification); //Clarification Name
+					//console.log(index_y); //Shows the Function Object with all it´s sub Items
+					$.each(index_y, function(Object_key, Object_value)
+						{
+						if(Object_value.Headline == selected_id)
+						{
+							var clarification_data = 
+									{
+										Clarification_Name:         Object_value.Headline,
+										Clarification_Description:  Object_value.Description,
+										Clarification_Information:	Object_value.Helping_information
+									};
+
+							var template = "<h2>{{Clarification_Name}}</h2><div><h3>Description</h3><p>{{Clarification_Description}}</p></div><div><h3>Possible Solutions</h3><p>{{Clarification_Information}}</p></div><button type='button' id='start_button'>start clarification</button>";
+							var output_position = document.getElementById("clarification_details");
+							writeMustache(template, clarification_data, output_position, 1);
+
+							document.getElementById("clarification_details").style.display = "inline";
+							
+							console.log(Object_value.function_name);
+
+
+							document.getElementById("start_button").onclick = eval(Object_value.function_name);
+							return;
+						}
+						});
+					});
+				});
 		});
-	});
 
-	appendClarifications(Clarification_Array, Clarification_NameArray, Clarification_counter);
-}
-
-//append the Functions to the Clarifications buttons
-function appendClarifications(clarifications_functions, clarification_names, counter)
-{
-	for (i = 0; i < counter; i++) 
-	{ 
-
-		console.log(clarification_names[i]);	
-
-		//Adding Dynamical functions to certain Elements
-  		var handler = function(iterator, method)
-		{
-			console.log(iterator);
-			console.log(method[iterator]);
-
-			//calls clarifications_functions[i]
-			eval(method[iterator]);
-		};
-
-		//onclick
-		console.log("6: Funktion auf Button setzten.")
-		document.getElementById(clarification_names[i]).onclick = handler.bind("this", i ,clarifications_functions);
-		document.getElementById("clarifications").style.display = "inline";
-
-	}
-}
-*/
-
-function show_clarification_details()
-{
-	//data???
-	var template = "<h2>{{clarification_name}}</h2><div><h3>Description</h3><p>{{Clarification_Description}}</p></div><div><h3>Possible Solutions</h3><p>{{Clarification_Information}}</p></div><button type='button'>start clarification</button>";
-	var output_position = document.getElementById("clarification_details");
-	//writeMustache(template, data, output_position, 1)
-	//appendfunction to button
+	
 }
 
 //Prototype Functions 
@@ -245,19 +240,5 @@ function openJSON_forBarriers(category_value)
 		{
 			console.log(json);
 			create_barrier_buttons(json);
-  		});
-}
-
-//??????
-function openJSON_forInformations(category_value)
-{	
-	console.log("Die openJSON function wurde gestartet.");
-	console.log("Ausgewählte Kategorie: " + category_value);
-
-	var json_string = "../json/" + category_value;
-  	$.getJSON(json_string, function(json) 
-		{
-			console.log(json);
-			//Informationen anzeigen (json);
   		});
 }
