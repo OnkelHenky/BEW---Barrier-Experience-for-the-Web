@@ -2,13 +2,24 @@
     "perception_clarifications": {
         "function 1": [
             {
-                "Headline": "Überschrift_12",
-                "Description": "Text zu Überschrift 1",
+                "Headline": "Screenreader",
+                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
-                "function_name": "perception1"
+                "function_name": "perception_screenreader"
             }
+        ],
+
+        "function 2": [
+            {
+                "Headline": "Kontrastpervertierer",
+                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "perception_contrast"
+            }   
         ]
     }
 }

@@ -16,6 +16,7 @@ function appendCategoryListeners(){
 
 }
 
+//Append Listeners to Clarifications Radiobuttons
 function appendBarrierListeners(){
 	var barriers = document.getElementsByClassName("clarification_radiobuttons");
 
@@ -121,6 +122,7 @@ function writeMustache(template, data, output_position, type){
 	}	
 }
 
+//Write Informationen for each Clarification 
 function showInformationBox()
 {
 	//var selected_id = $('input[name=clarification]:checked', '#clarification_form').val();
@@ -176,12 +178,7 @@ function showInformationBox()
 	
 }
 
-//Prototype Functions 
-//Simple Placeholder function
-function function_test(){
-	alert("You could start a clarification with this button.");
-}
-
+//Sicherheitshinweis bevor die Funktionen gestartet werden
 function security_hint() {
     var decision_value;
     
@@ -199,37 +196,7 @@ function security_hint() {
 	return decision_value
 }
 
-function perception1(){
-  if(security_hint())
-  {
-	chrome.tabs.executeScript(
-			{
-			file: 'js/perception1.js'
-		}); 
-  }
-}
-
-function understandable1(){
-  if(security_hint())
-  {
-	chrome.tabs.executeScript(
-			{
-			file: 'js/perception1.js'
-		}); 
-  }
-}
-
-function operable1(){
-  if(security_hint())
-  {
-	chrome.tabs.executeScript(
-			{
-			file: 'js/perception1.js'
-		}); 
-  }
-}
-
-//??????
+//JSON File wird geladen und weiter verarbeitet
 function openJSON_forBarriers(category_value)
 {	
 	console.log("Die openJSON function wurde gestartet.");
