@@ -13,12 +13,23 @@
 
         "function 2": [
             {
-                "Headline": "Kontrastpervertierer",
+                "Headline": "Kontrastpervertierer AA",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
-                "function_name": "perception_contrast"
+                "function_name": "perception_contrast_AA"
+            }   
+        ],
+        
+        "function 3": [
+            {
+                "Headline": "Kontrastpervertierer AAA",
+                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/icon.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "perception_contrast_AAA"
             }   
         ]
     }

@@ -7,11 +7,13 @@ $(document).ready(function()
 //Append Listeners to Category Radiobuttons
 function appendCategoryListeners(){
 	var categorys = document.getElementsByClassName("category_input");
-	
+	console.log(categorys);
+
 	for (var i=0; i < categorys.length; i++)
 	{
 		categorys[i].onchange = function(){ checkRadioValue();}
 		console.log("Listener für Radionbutton " + categorys[i] + "wurde hinzugefügt.");
+		console.log(categorys[i]);
 	}
 
 }
@@ -32,25 +34,28 @@ function appendBarrierListeners(){
 //Ausgewählte Kategorie wird überprüft.
 function checkRadioValue(){
 	console.log("Radio value wird abgefragt.")
-	var json_category;
+	var json_category = "not radiotbutton selected";
 	var headline_values = document.getElementsByClassName("category_label");
 
 	//Das onclick event wird vor dem radio-button wechsel gestartet.
 	if(document.getElementById("kat1").checked)
-	{
-		json_category = document.getElementById("kat1").value;		
+	{	
+		console.log("kat1 selected");
+		json_category = document.getElementById("kat1").value;
 		document.getElementById("clarifications_headline").innerText = headline_values[0].innerText + " clarifications:";
 		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";		
 	}
 	else if(document.getElementById("kat2").checked)
 	{
-		json_value = document.getElementById("kat2").value;
+		console.log("kat2 selected");
+		json_category = document.getElementById("kat2").value;
 		document.getElementById("clarifications_headline").innerText = headline_values[1].innerText + " clarifications:";
 		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
 	}
 	else if(document.getElementById("kat3").checked)
 	{
-		json_value = document.getElementById("kat3").value;
+		console.log("kat3 selected");
+		json_category = document.getElementById("kat3").value;
 		document.getElementById("clarifications_headline").innerText = headline_values[2].innerText + " clarifications:";
 		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
 	}
@@ -61,8 +66,11 @@ function checkRadioValue(){
 	}
 
 	console.log("JSOn File wurde ausgewählt.");
+	console.log(json_category);
 	//Text for later usage
 	document.getElementById("category_value").innerText = json_category;
+	
+
 	document.getElementById("category_value").style.display = "none";
 	openJSON_forBarriers(json_category);
 }

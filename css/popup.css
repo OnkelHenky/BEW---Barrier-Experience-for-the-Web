@@ -75,8 +75,10 @@ body {
 }
 
 #clarifications form fieldset input{
+    /*
     visibility: hidden;
     display: none;
+    */
 }
 
 #clarifications form fieldset input:checked+label {

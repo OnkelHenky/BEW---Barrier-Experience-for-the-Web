@@ -8,13 +8,24 @@ function perception_screenreader(){
   }
 }
 
-function perception_contrast(){
+function perception_contrast_AA(){
   if(security_hint())
   {
 						console.log("Test");
 	chrome.tabs.executeScript(
 			{
-			file: 'js/perception/perception_contrast.js'
+			file: 'js/perception/perception_contrast_AA.js'
+		}); 
+  }
+}
+
+function perception_contrast_AAA(){
+  if(security_hint())
+  {
+						console.log("Test");
+	chrome.tabs.executeScript(
+			{
+			file: 'js/perception/perception_contrast_AAA.js'
 		}); 
   }
 }
