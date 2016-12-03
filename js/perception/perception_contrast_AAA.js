@@ -1,155 +1,148 @@
 console.log("contentscript perception_contrast.js gets executed.");
 
-var text = document.getElementsByTagName("p");
-console.log(text);
+var searchterms = ["body", "div", "span"];
+//Change goal_values for different Guideline
+var goal_contrast_normal =  7;
+var goal_contrast_large	 =	4.5;
+var large_textsize		 =	18.66;
 
-var element = document.getElementsByTagName('body');
-console.log(element);
-    style = window.getComputedStyle(element);
-console.log(style);
-    top = style.getPropertyValue('top');
-console.log(top);
-/*    
-for(i=0; i<text.length; i++)
-{   
-    console.log(text[i]);
-    console.log(i);
-    
-    text[i].style.color = "red";
-    var font_color = text[i].style.color;
-    console.log(font_color);
-    hex2rgb(font_color);
-    console.log("Schriftfarbe: " + font_color);
-    
-    text[i].style.backgroundColor = "blue";
-    console.log(background_color);  
-    var background_color = text[i].style.backgroundColor;
-    console.log("Hintergrundfarbe: " + background_color);
-}
-
-function hex2rgb( colour ) 
+for(var i=0; i < searchterms.length; i++)
 {
-    var r,g,b;
-    if ( colour.charAt(0) == '#' ) 
-    {
-        colour = colour.substr(1);
-    }
+	var elements_of_searchterm = document.getElementsByTagName(searchterms[i]);
+	for(var j=0; j < elements_of_searchterm.length; j++)
+	{
+		//console.log(elements_of_searchterm[j]);
+		try
+		{
+			var background 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("background-color");
+			console.log(background);
+			background 		= convertRGBtoHEX(background);			
+			var font		= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("color")
+			font			= convertRGBtoHEX(font);
 
-    r = colour.charAt(0) + '' + colour.charAt(1);
-    g = colour.charAt(2) + '' + colour.charAt(3);
-    b = colour.charAt(4) + '' + colour.charAt(5);
+			var fontsize 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("font-size");
+			fontsize_number	= fontText_toNumber(fontsize);
+			var contrast 	= checkcontrast(background, font);
 
-    r = parseInt( r,16 );
-    g = parseInt( g,16 );
-    b = parseInt( b,16);
+			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 
-    console.log(r);
-    console.log(g);
-    console.log(b);
-    return rgb( + r + "," + g + "," + b + "");
+			if(fontsize_number > large_textsize)
+			{
+				while(contrast > goal_contrast_large)
+				{	
+					background = randomize_color(background);
+					font	   = randomize_color(font);
+					contrast = checkcontrast(background, font);
+					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+				}
+			}
+			else
+			{
+				while(contrast > goal_contrast_normal)
+				{	
+					background = randomize_color(background);
+					font	   = randomize_color(font);
+					contrast = checkcontrast(background, font);
+					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+				}
+			}
+
+			elements_of_searchterm[j].style.backgroundColor = "#" + background;
+			elements_of_searchterm[j].style.color			= "#" + font;
+		}
+		catch(error)
+		{
+			console.log("########################################");
+			//console.log("Calculation is not successfull: " + error);
+		}
+	}
 }
 
-function luminanace(r, g, b) 
-{
-    var a = [r,g,b].map(function(v) 
-    {
-        v /= 255;
-        return (v <= 0.03928) ?
-        v / 12.92 :
-        Math.pow( ((v+0.055)/1.055), 2.4 );    
-    });
-
-    console.log(a);
-    return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
-}
-
-(luminanace(255, 255, 255) + 0.05) / (luminanace(255, 255, 0) + 0.05); // 1.074 for yellow
-(luminanace(255, 255, 255) + 0.05) / (luminanace(0, 0, 255) + 0.05); // 8.592 for blue
-// minimal recommended contrast ratio is 4.5 or 3 for larger font-sizes
-
-*/
-
-/* Color contrast script for http://webaim.org/resources/contrastchecker/
-Authored by Jared Smith.
-Nothing here is too earth shattering, but if you're reading this, you must be interested. Feel free to steal, borrow, or use this code however you would like.
-The color picker is jscolor - http://jscolor.com/
-*/
-
-function checkcontrast() {
-	var normal = document.getElementById("normal");
-	var big = document.getElementById("big");
-	var contrastratio = document.getElementById("contrastratio");
-	var normalaa = document.getElementById("normalaa");
-	var normalaaa = document.getElementById("normalaaa");
-	var bigaa = document.getElementById("bigaa");
-	var bigaaa = document.getElementById("bigaaa");
-	var fg = document.getElementById("fg");
-	var bg = document.getElementById("bg");
+function fontText_toNumber(text){
 	
-	var color=getColor("foreground");
-	var bgcolor=getColor("background");
+	var number ="";
+	for(var i=0; i<text.length-2; i++)
+	{
+		number = number + text[i];
+	}
+
+	text = number;
+	
+	return number;
+}
+
+function randomize_color(color){
+
+	var color_value = "";
+	for(var i=0; i<color.length; i++)
+	{	
+		var random_value = Math.floor((Math.random() * 15));
+		color_value = color_value + pickHEXvalue(random_value);
+	}
+		
+	return color_value
+}
+
+function pickHEXvalue(number){
+	//http://www.w3schools.com/colors/colors_picker.asp
+	switch(number) 
+	{
+	case 10:
+		return "A";
+	case 11:
+		return "B";
+	case 12:
+		return "C";
+	case 13:		
+		return "D";
+	case 14:
+		return "E";
+	case 15:		
+		return "F";
+	default:
+		return number.toString();
+	}
+}
+
+function convertRGBtoHEX(color){
+	if(color[0] == "#")
+	{
+		return color;
+	}
+	else if(color[3] == "a")
+	{
+		//Convert from rgba to hex
+		//throws error
+		return color;
+	}
+	else
+	{	
+		var parts = color.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+		delete(parts[0]);
+		for (var i=1; i<=3; ++i)
+		{
+			parts[i] = parseInt(parts[i]).toString(16);
+			if(parts[i].length == 1) parts[i] = '0' + parts[i];
+		}
+
+		color = parts.join('');
+		return color;
+	}
+}
+
+function checkcontrast(background, font){	
+	var color=font;
+	var bgcolor=background;
 
 	var L1 = getL(color);
 	var L2 = getL(bgcolor);
-	
-	if (L1!==false && L2!==false) {
-		normal.style.color = "#"+color;
-		normal.style.backgroundColor = "#"+bgcolor;
-		big.style.color = "#"+color;
-		big.style.backgroundColor = "#"+bgcolor;
-		fg.style.backgroundColor = "#"+color;
-		bg.style.backgroundColor = "#"+bgcolor;
-		var ratio = (Math.max(L1, L2) + 0.05)/(Math.min(L1, L2) + 0.05);
-		contrastratio.innerHTML = (Math.round(ratio*100)/100) + ":1";
-		if(ratio >= 4.5) {
-			normalaa.innerHTML = "Pass";
-			normalaa.className='pass';
-			bigaaa.innerHTML = "Pass";
-			bigaaa.className="pass";
-		}
-		else {
-			normalaa.innerHTML = "Fail";
-			normalaa.className="fail";
-			bigaaa.innerHTML = "Fail";
-			bigaaa.className="fail";
-		}
-		if(ratio >= 3) {
-			bigaa.innerHTML = "Pass";
-			bigaa.className='pass';
-		}
-		else {
-			bigaa.innerHTML = "Fail";
-			bigaa.className='fail';
-		}
-		if(ratio >= 7) {
-			normalaaa.innerHTML = "Pass";
-			normalaaa.className='pass';
-		}
-		else {
-			normalaaa.innerHTML = "Fail";
-			normalaaa.className='fail';
-		}
-	}
-	else {
-		normal.style.color = "#00f";
-		normal.style.backgroundColor = "#fff";
-		big.style.color = "#00f";
-		big.style.backgroundColor = "#fff";
-		contrastratio.innerHTML = "N/A";
-		normalaa.innerHTML = "?";
-		normalaaa.innerHTML = "?";
-		bigaa.innerHTML = "?";
-		bigaaa.innerHTML = "?";
-	}
+
+	var ratio 	= (Math.max(L1, L2) + 0.05)/(Math.min(L1, L2) + 0.05);
+	ratio 		= Math.round(ratio*100)/100;
+	return ratio;
 }
 
-function getColor(location) {
-	colorobj = document.getElementById(location);
-	var color=colorobj.value.replace("#","");
-	return color;
-}
-
-function getL(color) {
+function getL(color){
 	if(color.length == 3) {
 		var R = getsRGB(color.substring(0,1) + color.substring(0,1));
 		var G = getsRGB(color.substring(1,2) + color.substring(1,2));
@@ -175,7 +168,7 @@ function getL(color) {
 	
 }
 
-function getsRGB(color) {
+function getsRGB(color){
 	color=getRGB(color);
 	if(color!==false) {
 		color = color/255;
@@ -187,7 +180,7 @@ function getsRGB(color) {
 	}
 }
 
-function getRGB(color) {
+function getRGB(color){
 	try {
 		var color = parseInt(color, 16);
 	}
@@ -196,151 +189,3 @@ function getRGB(color) {
 	}
 	return color;
 }
-
-function changehue(loc,dir) {
-	var color=getColor(loc);
-	if(color.length == 3) {
-		var R = color.substring(0,1) + color.substring(0,1);
-		var G = color.substring(1,2) + color.substring(1,2);
-		var B = color.substring(2,3) + color.substring(2,3);
-	}
-	else if(color.length == 6) {
-		var R = color.substring(0,2);
-		var G = color.substring(2,4);
-		var B = color.substring(4,6);
-		update = true;
-	}
-	else {
-		update=false;
-	}
-	R = getRGB(R);
-	G = getRGB(G);
-	B = getRGB(B);
-
-	HSL = RGBtoHSL(R, G, B);
-	var lightness = HSL[2];
-	if (update==true) {
-		lightness = (dir=="lighten") ? lightness+6.25 : lightness-6.25;
-		if (lightness>100) {
-			lightness=100;
-		}
-		if (lightness<0) {
-			lightness=0;
-		}
-		RGB = hslToRgb(HSL[0],HSL[1],lightness);
-		R = RGB[0];
-		G = RGB[1];
-		B = RGB[2];
-		if(!(R>=0)&&!(R<=255)) R=0
-		if(!(G>=0)&&!(G<=255)) G=0
-		if(!(B>=0)&&!(B<=255)) B=0
-		R = (R >= 16) ? R.toString(16) : "0" + R.toString(16);
-		G = (G >= 16) ? G.toString(16) : "0" + G.toString(16);
-		B = (B >= 16) ? B.toString(16) : "0" + B.toString(16);
-		R = (R.length==1) ? R + R : R;
-		G = (G.length==1) ? G + G : G;
-		B = (B.length==1) ? B + B : B;
-		document.getElementById(loc).value=R + G + B;
-		checkcontrast();
-	}
-}
-
-function RGBtoHSL(r,g,b)
-{
-	var Min=0;
-	var Max=0;
-	r=(eval(r)/51)*.2;
-	g=(eval(g)/51)*.2;
-	b=(eval(b)/51)*.2;
-
-	if (eval(r)>=eval(g))
-		Max=eval(r);
-	else
-		Max=eval(g);
-	if (eval(b)>eval(Max))
-		Max=eval(b);
-	
-	if (eval(r)<=eval(g))
-		Min=eval(r);
-	else
-		Min=eval(g);
-	if (eval(b)<eval(Min))
-		Min=eval(b);
-
-	L=(eval(Max)+eval(Min))/2;
-	if (eval(Max)==eval(Min)) 
-	{
-		S=0;
-		H=0;
-	} 
-	else 
-	{
-		if (L < .5)
-			S=(eval(Max)-eval(Min))/(eval(Max)+eval(Min));
-		if (L >= .5)
-			S=(eval(Max)-eval(Min))/(2-eval(Max)-eval(Min));
-		if (r==Max)
-			H = (eval(g)-eval(b))/(eval(Max)-eval(Min));
-		if (g==Max)
-			H = 2+((eval(b)-eval(r))/(eval(Max)-eval(Min)));
-		if (b==Max)
-			H = 4+((eval(r)-eval(g))/(eval(Max)-eval(Min)));
-	}
-	H=Math.round(H*60);
-	if(H<0) H += 360;
-	if(H>=360) H -= 360;
-	S=Math.round(S*100);
-	L=Math.round(L*100);
-	return  [H, S, L];
-}
-
-function hslToRgb(H, S, L){
-   	var p1,p2;
-	L/=100;
-	S/=100;
-	if (L<=0.5) p2=L*(1+S);
-	else p2=L+S-(L*S);
-	p1=2*L-p2;
-	if (S==0) 
-	{
-		R=L; 
-		G=L;
-		B=L;
-	} 
-	else 
-	{
-		R=FindRGB(p1,p2,H+120);
-		G=FindRGB(p1,p2,H);
-		B=FindRGB(p1,p2,H-120);
-	}
-	R *= 255;
-	G *= 255;
-	B *= 255;
-	R=Math.round(R);
-	G=Math.round(G);
-	B=Math.round(B);
-
-    return [R, G, B];
-};
-
-function FindRGB(q1,q2,hue) 
-{
-	if (hue>360) hue=hue-360;
-	if (hue<0) hue=hue+360;
-	if (hue<60) return (q1+(q2-q1)*hue/60);
-	else if (hue<180) return(q2);
-	else if (hue<240) return(q1+(q2-q1)*(240-hue)/60);
-	else return(q1);
-}
-
-/*
-window.onload = function() {
-	if (document.getElementById) {
-		foreground = document.getElementById("foreground");
-		background = document.getElementById("background");
-		foreground.onchange = checkcontrast;
-		background.onchange = checkcontrast;
-	}
-	checkcontrast();
-}
-*/
