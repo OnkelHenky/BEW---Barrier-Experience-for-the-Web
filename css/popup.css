@@ -1,11 +1,16 @@
 body {
     background-color: white;
-    font-family:sans-serif;
-    width: 490px;
+    font-family: sans-serif;
+    width: 300px;
+    height: auto;
 }
 
 #categorys {
-    width: 490px;
+    width: 300px;
+}
+
+#categorys form fieldset{
+    height: 100px;
 }
 
 #categorys form fieldset input{
@@ -14,35 +19,28 @@ body {
 }
 
 #categorys form fieldset input:checked+label {
-    background-color: yellow;
     border-radius: 50%;
     border: 4px solid black;
-
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
     float: left;
-
-    font: 32px Arial, sans-serif;
 }
 
 #categorys form fieldset .category_button {
-    background-color: yellow;
     border-radius: 50%;
     border: 2px solid black;
-
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
     float: left;
+}
 
-    font: 32px Arial, sans-serif;
+.category_button img{
+    width: 50px;
+    height: auto;
 }
 
 .category_div {
@@ -55,7 +53,7 @@ body {
 }
 
 .category_label {
-    width: 65px;
+    width: 80px;
     float: left;
     text-align: center;
     margin-top: 5px;
@@ -71,46 +69,33 @@ body {
 
 #clarifications {
     width: 290px;
+    height: auto;
     display: none;
 }
 
 #clarifications form fieldset input{
-    /*
     visibility: hidden;
     display: none;
-    */
 }
 
 #clarifications form fieldset input:checked+label {
-    background-color: yellow;
     border-radius: 50%;
     border: 4px solid black;
-
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
     float: left;
-
-    font: 32px Arial, sans-serif;
 }
 
 #clarifications form fieldset .clarification_button {
-    background-color: yellow;
     border-radius: 50%;
     border: 2px solid black;
-
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     padding: 10px;
     margin-left: 5px;
-    margin-right: 5px;
-    text-align: center;
     float: left;
-
-    font: 32px Arial, sans-serif;
 }
 
 .clarification_div{
@@ -146,4 +131,9 @@ body {
     margin-right: 25%;
     width: 70%;
     height: 35px;
+}
+
+.clarification_button img{
+    width: 50px;
+    height: auto;
 }

@@ -5,7 +5,7 @@
                 "Headline": "Screenreader",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "perception_screenreader"
             }
@@ -16,7 +16,7 @@
                 "Headline": "Kontrastpervertierer AA",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "perception_contrast_AA"
             }   
@@ -27,9 +27,20 @@
                 "Headline": "Kontrastpervertierer AAA",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "perception_contrast_AAA"
+            }   
+        ],
+        
+        "function 4": [
+            {
+                "Headline": "Kontrastpervertierer AAAA",
+                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Image_source": "images/auge_black.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "perception_contrast_AAAA"
             }   
         ]
     }

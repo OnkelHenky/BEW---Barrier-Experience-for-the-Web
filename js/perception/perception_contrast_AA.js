@@ -65,22 +65,39 @@ function fontText_toNumber(text){
 	{
 		number = number + text[i];
 	}
-
 	text = number;
-	
 	return number;
 }
 
 function randomize_color(color){
-
 	var color_value = "";
 	for(var i=0; i<color.length; i++)
 	{	
 		var random_value = Math.floor((Math.random() * 15));
 		color_value = color_value + pickHEXvalue(random_value);
 	}
-		
 	return color_value
+}
+
+
+function HexToNumber(HEX){
+	switch(HEX) 
+	{
+	case "A":
+		return 10;
+	case "B":
+		return 11;
+	case "C":
+		return 12;
+	case "D":		
+		return 13;
+	case "E":
+		return 14;
+	case "F":		
+		return 15;
+	default:
+		return HEX;
+	}
 }
 
 function pickHEXvalue(number){

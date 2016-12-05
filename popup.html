@@ -11,42 +11,42 @@
     <script src="js/popup.js" type="text/javascript"></script>
   </head>
   <body>
-    <h1>Point out hidden barriers</h1>
-    <h2>Categorys</h2>
+    <h1>BEW - Barrier Expierence for the Web</h1>
+    <h2>Kategorien</h2>
     <div id="categorys">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <p>Die Kategorien des BEW-Tool orientieren sich an den WCAG 2.0 des W3C. Wählen sie eine Kategorien aus um auf einen Pool an Ehrfarberen Barrieren zu wählen.</p>
       <form id="category_form">
         <fieldset>  
           <div class="category_div">
             <input type="radio" id="kat1" name="category" value="perception_clarifications.json" class="category_input">
             <label class="category_button" for="kat1">
-              <img src="images/icon.png" alt="Alt-Attribute">
+              <img src="images/auge_black.png" alt="Alt-Attribute" id="auge">
             </label>
-            <label class="category_label">perception</label>
+            <label class="category_label">Wahrnehmbar</label>
           </div>
 
           <div class="category_div">
             <input type="radio" id="kat2" name="category" value="operable_clarifications.json" class="category_input">
             <label class="category_button" for="kat2">
-              <img src="images/icon.png" alt="Alt-Attribute">
+              <img src="images/hand_black.png" alt="Alt-Attribute" id="hand">
             </label>
-            <label class="category_label">operable</label>
+            <label class="category_label">Bedienbar</label>
           </div>
 
           <div class="category_div">
             <input type="radio" id="kat3" name="category" value="understandable_clarifications.json" class="category_input">
             <label class="category_button" for="kat3">
-              <img src="images/icon.png" alt="Alt-Attribute">
+              <img src="images/kopf_black.png" alt="Alt-Attribute" id="kopf">
             </label>
-            <label class="category_label">understandable</label>
+            <label class="category_label">Verständlich</label>
           </div>
         <var id="category_value"></var>
         </fieldset>
       </form>
     </div>
     <div id="clarifications">
-      <h2 id="clarifications_headline">Clarifications</h2>
-      <p id="clarifications_infotext">Infotext</p>
+      <h2 id="clarifications_headline">Ehrfahrbare Barrieren</h2>
+      <p id="clarifications_infotext">Informationen</p>
       <form id="clarification_form">
         <fieldset id="barrier_button_area">
             <!-- put mustache here -->

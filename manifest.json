@@ -5,18 +5,18 @@
 
 // Extension Information
   "manifest_version": 2,
-  "name": "Pohb - Point out hidden barriers",
-  "description": "This Extensions search the Sourcecode of Website for hidden barriers. It manipluates the Sourcecode to clarify the barriers and give hints to the user to remove these.",
-  "version": "0.1",
+  "name": "BEW - Barrier Expierence for the Web",
+  "description": "Mit der Erweiterung ist es möglich durch CSS und Javascript erstellte Barrieren auf Webseiten zu erleben. Die Barrieren sind dabei jeweils an nicht erfüllten WCAG 2.0 Richtlinien angelehnt. ################################################################## ACHTUNG - Bei den so erstellten 'Barrieren' handelt es sich nicht um eine Simulation von körperlichen oder Geistigen Behinderungen. Versuch diese Barrieren für Anwender nachvollziehbarer zu machen.",
+  "version": "1.0",
   "icons": { "16": "images/icon.png",
              "48": "images/icon.png",
             "128": "images/icon.png" 
             },
  // Extension UI
   "browser_action": {
-    "default_locale": "en",
+    "default_locale": "de",
     "default_icon":  "images/icon.png",
-    "default_title": "Open Simulator - NOT FINAL",
+    "default_title": "BEW öffnen",
     "default_popup": "popup.html" 
     },
 

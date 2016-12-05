@@ -42,22 +42,31 @@ function checkRadioValue(){
 	{	
 		console.log("kat1 selected");
 		json_category = document.getElementById("kat1").value;
-		document.getElementById("clarifications_headline").innerText = headline_values[0].innerText + " clarifications:";
-		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";		
+		document.getElementById("clarifications_headline").innerText = headline_values[0].innerText;
+		document.getElementById("clarifications_infotext").innerText = "Informationen und Bestandteile der Benutzerschnittstelle müssen den Benutzern so präsentiert werden, dass diese sie wahrnehmen können.";
+		document.getElementById("auge").src = "images/auge.png";
+		document.getElementById("hand").src	= "images/hand_black.png";
+		document.getElementById("kopf").src = "images/kopf_black.png";
 	}
 	else if(document.getElementById("kat2").checked)
 	{
 		console.log("kat2 selected");
 		json_category = document.getElementById("kat2").value;
-		document.getElementById("clarifications_headline").innerText = headline_values[1].innerText + " clarifications:";
-		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+		document.getElementById("clarifications_headline").innerText = headline_values[1].innerText;
+		document.getElementById("clarifications_infotext").innerText = "Bestandteile der Benutzerschnittstelle und Navigation müssen bedienbar sein.";
+		document.getElementById("auge").src = "images/auge_black.png";
+		document.getElementById("hand").src	= "images/hand.png";
+		document.getElementById("kopf").src = "images/kopf_black.png";
 	}
 	else if(document.getElementById("kat3").checked)
 	{
 		console.log("kat3 selected");
 		json_category = document.getElementById("kat3").value;
-		document.getElementById("clarifications_headline").innerText = headline_values[2].innerText + " clarifications:";
-		document.getElementById("clarifications_infotext").innerText = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+		document.getElementById("clarifications_headline").innerText = headline_values[2].innerText;
+		document.getElementById("clarifications_infotext").innerText = "Informationen und Bedienung der Benutzerschnittstelle müssen verständlich sein.";
+		document.getElementById("auge").src = "images/auge_black.png";
+		document.getElementById("hand").src	= "images/hand_black.png";
+		document.getElementById("kopf").src = "images/kopf.png";
 	}
 	else
 	{
@@ -69,8 +78,8 @@ function checkRadioValue(){
 	console.log(json_category);
 	//Text for later usage
 	document.getElementById("category_value").innerText = json_category;
-	
 
+	document.getElementById("clarification_details").style.display = "none";
 	document.getElementById("category_value").style.display = "none";
 	openJSON_forBarriers(json_category);
 }
@@ -171,22 +180,20 @@ function showInformationBox()
 							writeMustache(template, clarification_data, output_position, 1);
 
 							document.getElementById("clarification_details").style.display = "inline";
-							
 							console.log(Object_value.function_name);
 
-
 							document.getElementById("start_button").onclick = eval(Object_value.function_name);
+							"eval is evil"
 							return;
 						}
 						});
 					});
 				});
 		});
-
-	
 }
 
 //Sicherheitshinweis bevor die Funktionen gestartet werden
+/*
 function security_hint() {
     var decision_value;
     
@@ -203,6 +210,7 @@ function security_hint() {
 
 	return decision_value
 }
+*/
 
 //JSON File wird geladen und weiter verarbeitet
 function openJSON_forBarriers(category_value)
