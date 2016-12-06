@@ -6,7 +6,7 @@
                 "Description": "Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
                 "Helping_link": "https://www.google.de/",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/kopf_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_Akademiker"
             }
@@ -17,7 +17,7 @@
                 "Description": "Text zu Überschrift 2",
                 "Helping_information": "fdghjkjhgfg",
                 "Helping_link": "https://www.google.de/",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/kopf_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_teenager"
             }
@@ -28,7 +28,7 @@
                 "Description": "Text zu Überschrift 3",
                 "Helping_information": "fdghjkjhgfg",
                 "Helping_link": "https://www.google.de/",
-                "Image_source": "images/icon.png",
+                "Image_source": "images/kopf_black.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_child"
             }

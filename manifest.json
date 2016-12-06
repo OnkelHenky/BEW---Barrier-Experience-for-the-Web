@@ -1,21 +1,19 @@
 {
-// Author Information
   "author": "Kevin Kirr",
   "homepage_url": "http://personabrowser.gpii.eu/",
 
-// Extension Information
   "manifest_version": 2,
   "name": "BEW - Barrier Expierence for the Web",
-  "description": "Mit der Erweiterung ist es möglich durch CSS und Javascript erstellte Barrieren auf Webseiten zu erleben. Die Barrieren sind dabei jeweils an nicht erfüllten WCAG 2.0 Richtlinien angelehnt. ################################################################## ACHTUNG - Bei den so erstellten 'Barrieren' handelt es sich nicht um eine Simulation von körperlichen oder Geistigen Behinderungen. Versuch diese Barrieren für Anwender nachvollziehbarer zu machen.",
+  "description": "Mit der Erweiterung ist es möglich durch CSS und Javascript erstellte Barrieren auf Webseiten zu erleben.",
   "version": "1.0",
-  "icons": { "16": "images/icon.png",
-             "48": "images/icon.png",
-            "128": "images/icon.png" 
+  "icons": { "16": "images/auge_black.png",
+             "48": "images/auge_black.png",
+            "128": "images/auge_black.png" 
             },
- // Extension UI
+            
   "browser_action": {
     "default_locale": "de",
-    "default_icon":  "images/icon.png",
+    "default_icon":  "images/auge_black.png",
     "default_title": "BEW öffnen",
     "default_popup": "popup.html" 
     },
