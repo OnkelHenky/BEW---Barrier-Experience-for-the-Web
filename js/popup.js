@@ -172,10 +172,11 @@ function showInformationBox()
 									{
 										Clarification_Name:         Object_value.Headline,
 										Clarification_Description:  Object_value.Description,
-										Clarification_Information:	Object_value.Helping_information
+										Clarification_Information:	Object_value.Helping_information,
+										Clarification_Link:			Object_value.Helping_link
 									};
 
-							var template = "<h2>{{Clarification_Name}}</h2><div><h3>Description</h3><p>{{Clarification_Description}}</p></div><div><h3>Possible Solutions</h3><p>{{Clarification_Information}}</p></div><button type='button' id='start_button'>start clarification</button>";
+							var template = "<h2>{{Clarification_Name}}</h2><div><h3>Beschreibung</h3><p>{{Clarification_Description}}</p></div><div><h3>Hilfsmittel</h3><p>{{Clarification_Information}}</p><a href='{Clarification_Link}' target='blank'>weitere Hilfen</a></div><button type='button' id='start_button'>Barriere starten</button>";
 							var output_position = document.getElementById("clarification_details");
 							writeMustache(template, clarification_data, output_position, 1);
 

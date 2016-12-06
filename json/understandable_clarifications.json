@@ -5,6 +5,7 @@
                 "Headline": "Textlesbarkeit Akademiker",
                 "Description": "Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_Akademiker"
@@ -15,6 +16,7 @@
                 "Headline": "Textlesbarkeit Teenager",
                 "Description": "Text zu Überschrift 2",
                 "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_teenager"
@@ -25,6 +27,7 @@
                 "Headline": "Textlesbarkeit Kind",
                 "Description": "Text zu Überschrift 3",
                 "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "understandable_child"

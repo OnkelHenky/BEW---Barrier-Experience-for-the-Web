@@ -5,6 +5,7 @@
                 "Headline": "keine Mauscursor bedienung",
                 "Description": "Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "no_cursor_1"
@@ -16,6 +17,7 @@
                 "Headline": "kein Mauscursor bedienung 2",
                 "Description": "Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
                 "Image_source": "images/icon.png",
                 "Image_alt": "Alt-Attribut",
                 "function_name": "no_cursor_2"
