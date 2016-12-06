@@ -184,7 +184,8 @@ function showInformationBox()
 							console.log(Object_value.function_name);
 
 							document.getElementById("start_button").onclick = eval(Object_value.function_name);
-							"eval is evil"
+							//"eval is evil"
+							window.scrollTo(0,document.body.scrollHeight);
 							return;
 						}
 						});

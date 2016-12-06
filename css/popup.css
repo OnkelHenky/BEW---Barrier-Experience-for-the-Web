@@ -5,11 +5,16 @@ body {
     height: auto;
 }
 
+#barrier_button_area{
+    padding-bottom: 20px;
+}
+
 #categorys {
     width: 300px;
 }
 
 #categorys form fieldset{
+    padding-bottom: 20px;
     height: 100px;
 }
 
@@ -74,6 +79,7 @@ body {
 }
 
 #clarifications form fieldset input{
+    padding-bottom: 20px;
     visibility: hidden;
     display: none;
 }
