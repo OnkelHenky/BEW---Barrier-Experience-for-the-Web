@@ -11,7 +11,6 @@ for(var i=0; i < searchterms.length; i++)
 	var elements_of_searchterm = document.getElementsByTagName(searchterms[i]);
 	for(var j=0; j < elements_of_searchterm.length; j++)
 	{
-		//console.log(elements_of_searchterm[j]);
 		try
 		{
 			var background 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("background-color");
@@ -33,7 +32,7 @@ for(var i=0; i < searchterms.length; i++)
 					background = randomize_color(background);
 					font	   = randomize_color(font);
 					contrast = checkcontrast(background, font);
-					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
 			else
@@ -43,17 +42,15 @@ for(var i=0; i < searchterms.length; i++)
 					background = randomize_color(background);
 					font	   = randomize_color(font);
 					contrast = checkcontrast(background, font);
-					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
-
 			elements_of_searchterm[j].style.backgroundColor = "#" + background;
 			elements_of_searchterm[j].style.color			= "#" + font;
 		}
 		catch(error)
 		{
-			console.log("########################################");
-			//console.log("Calculation is not successfull: " + error);
+			console.log("Calculation is not successfull: " + error);
 		}
 	}
 }

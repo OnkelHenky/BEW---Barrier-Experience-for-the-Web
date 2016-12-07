@@ -6,7 +6,6 @@ console.log("contentscript gets executed.");
     //ReadingLevel Children
     var ReadingLevel = 90;
 
-
     //Durchschnittliche Silbenlänge
     var SOLL_ASL = 3.8;
 

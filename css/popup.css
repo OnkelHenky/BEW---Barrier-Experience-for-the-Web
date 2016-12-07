@@ -68,23 +68,23 @@ body {
     display: none;
 }
 
-.clarification_radiobuttons {
+.barrier_radiobuttons {
     display: none;
 }
 
-#clarifications {
+#barriers {
     width: 290px;
     height: auto;
     display: none;
 }
 
-#clarifications form fieldset input{
+#barriers form fieldset input{
     padding-bottom: 20px;
     visibility: hidden;
     display: none;
 }
 
-#clarifications form fieldset input:checked+label {
+#barriers form fieldset input:checked+label {
     border-radius: 50%;
     border: 4px solid black;
     width: 50px;
@@ -94,7 +94,7 @@ body {
     float: left;
 }
 
-#clarifications form fieldset .clarification_button {
+#barriers form fieldset .barrier_button {
     border-radius: 50%;
     border: 2px solid black;
     width: 50px;
@@ -104,7 +104,7 @@ body {
     float: left;
 }
 
-.clarification_div{
+.barrier_div{
     width: 78px;
     height: 70px;
     margin-top: 10px;
@@ -114,32 +114,32 @@ body {
     float: left;
 }
 
-.clarification_label {
+.barrier_label {
     width: 65px;
     float: left;
     text-align: center;
     margin-top: 5px;
 }
 
-#clarification_details h2{
+#barrier_details h2{
     margin-bottom: 0px;
     width: 100%;
     text-align: center;
 }
 
-#clarification_details div{
+#barrier_details div{
     width: 45%;
     margin-left: 4%;
     float: left;
 }
 
-#clarification_details button {
+#barrier_details button {
     margin-left: 10%;
     width: 80%;
     height: 35px;
 }
 
-.clarification_button img{
+.barrier_button img{
     width: 50px;
     height: auto;
 }
