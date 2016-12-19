@@ -2,34 +2,23 @@
     "Understandable_data": {
         "Function 1": [
             {
-                "Headline": "Textlesbarkeit Akademiker",
+                "Headline": "Textlesbarkeit Teenager",
                 "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren.",
                 "Helping_information": "Wenn der Text nach der Entfernung von Eigennamen und Titeln Lesefähigkeiten voraussetzt, die über das Niveau der niedrigen, sekundären Schulbildung hinausgehen, dann gibt es ergänzenden Inhalt oder eine Version, die keine über die niedrige, sekundäre Schulbildung hinausgehenden Lesefähigkeiten verlangt.",
                 "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-meaning-supplements",
                 "Image_source": "images/kopf_black.png",
-                "Image_alt": "Augensymbol - öffnet Informationtsbox für die Funktion Textlesbarkeit Akademiker",
-                "function_name": "understandable_Akademiker"
+                "Image_alt": "Augensymbol - öffnet Informationtsbox für die Funktion Textlesbarkeit Teenager",
+                "function_name": "understandable_teenager"
             }
         ],
         "Function 2": [
             {
-                "Headline": "Textlesbarkeit Teenager",
-                "Description": "Text zu Überschrift 2",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Headline": "Textlesbarkeit Kinder",
+                "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren.",
+                "Helping_information": "Wenn der Text nach der Entfernung von Eigennamen und Titeln Lesefähigkeiten voraussetzt, die über das Niveau der niedrigen, sekundären Schulbildung hinausgehen, dann gibt es ergänzenden Inhalt oder eine Version, die keine über die niedrige, sekundäre Schulbildung hinausgehenden Lesefähigkeiten verlangt.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-meaning-supplements",
                 "Image_source": "images/kopf_black.png",
-                "Image_alt": "Alt-Attribut",
-                "function_name": "understandable_teenager"
-            }
-        ],
-        "Function 3": [
-            {
-                "Headline": "Textlesbarkeit Kind",
-                "Description": "Text zu Überschrift 3",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
-                "Image_source": "images/kopf_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Augensymbol - öffnet Informationtsbox für die Funktion Textlesbarkeit Kinder",
                 "function_name": "understandable_child"
             }
         ]

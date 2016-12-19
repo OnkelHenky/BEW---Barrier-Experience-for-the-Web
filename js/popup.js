@@ -137,7 +137,7 @@ function writeMustache(template, data, output_position, type){
 			document.getElementById("barrier_details").style.display = "inline";
 	}	
 }
-
+	
 //Write Informationen for each barrier 
 function showInformationBox()
 {
@@ -146,7 +146,6 @@ function showInformationBox()
 	var json_string = "../json/" + category_value;
   	$.getJSON(json_string, function(jsonObject) 
 		{
-
 			//Informationen anzeigen (json);
 			$.each(jsonObject,function(Index_barrier, barriers)
 			{
@@ -158,14 +157,16 @@ function showInformationBox()
 						{
 							var barrier_data = 
 									{
-										Barrier_Name:         Object_value.Headline,
-										Barrier_Description:  Object_value.Description,
+										Barrier_Name:         	Object_value.Headline,
+										Barrier_Description:  	Object_value.Description,
 										Barrier_Information:	Object_value.Helping_information,
 										Barrier_Link:			Object_value.Helping_link
 									};
 
 							var template = "<h2>{{Barrier_Name}}</h2><div><h3>Beschreibung</h3><p>{{Barrier_Description}}</p></div><div><h3>Hilfsmittel</h3><p>{{Barrier_Information}}</p><a href='{Barrier_Link}' target='blank'>weitere Hilfen</a></div><button type='button' id='start_button'>Barriere starten</button>";
+							
 							var output_position = document.getElementById("barrier_details");
+							
 							writeMustache(template, barrier_data, output_position, 1);
 
 							document.getElementById("barrier_details").style.display = "inline";
@@ -177,6 +178,20 @@ function showInformationBox()
 							return;
 						}
 						});	});	});		});
+}
+
+//JSON File wird geladen und weiter verarbeitet
+function openJSON_forBarriers(category_value)
+{	
+	console.log("Die openJSON function wurde gestartet.");
+	console.log("Ausgewählte Kategorie: " + category_value);
+
+	var json_string = "../json/" + category_value;
+  	$.getJSON(json_string, function(json) 
+		{
+			console.log(json);
+			create_barrier_buttons(json);
+  		});
 }
 
 //Sicherheitshinweis bevor die Funktionen gestartet werden
@@ -198,17 +213,3 @@ function security_hint() {
 	return decision_value
 }
 */
-
-//JSON File wird geladen und weiter verarbeitet
-function openJSON_forBarriers(category_value)
-{	
-	console.log("Die openJSON function wurde gestartet.");
-	console.log("Ausgewählte Kategorie: " + category_value);
-
-	var json_string = "../json/" + category_value;
-  	$.getJSON(json_string, function(json) 
-		{
-			console.log(json);
-			create_barrier_buttons(json);
-  		});
-}

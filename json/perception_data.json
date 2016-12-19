@@ -2,29 +2,17 @@
     "perception_data": {
         "function 1": [
             {
-                "Headline": "Screenreader",
-                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
-                "Image_source": "images/auge_black.png",
-                "Image_alt": "Alt-Attribut",
-                "function_name": "perception_screenreader"
-            }
-        ],
-
-        "function 2": [
-            {
                 "Headline": "Kontrastmangel Level - AA",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
                 "Helping_link": "https://www.google.de/",
                 "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
-                "function_name": "perception_contrast_AA"
+                "function_name": "perception_contrast_AA_luminance"
             }   
         ],
         
-        "function 3": [
+        "function 2": [
             {
                 "Headline": "Kontrastmangel Level - AAA",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
@@ -32,19 +20,30 @@
                 "Helping_link": "https://www.google.de/",
                 "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
-                "function_name": "perception_contrast_AAA"
+                "function_name": "perception_contrast_AAA_luminance"
             }   
         ],
-        
-        "function 4": [
+        "function 3": [
             {
-                "Headline": "Element für Ebene 2",
+                "Headline": "Kontrastmangel Level - AA (R)",
                 "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
                 "Helping_information": "fdghjkjhgfg",
                 "Helping_link": "https://www.google.de/",
                 "Image_source": "images/auge_black.png",
                 "Image_alt": "Alt-Attribut",
-                "function_name": "perception_contrast_AAAA"
+                "function_name": "perception_contrast_AA_randomColor"
+            }   
+        ],
+        
+        "function 4": [
+            {
+                "Headline": "Kontrastmangel Level - AAA (R)",
+                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
+                "Helping_information": "fdghjkjhgfg",
+                "Helping_link": "https://www.google.de/",
+                "Image_source": "images/auge_black.png",
+                "Image_alt": "Alt-Attribut",
+                "function_name": "perception_contrast_AAA_randomColor"
             }   
         ]
     }

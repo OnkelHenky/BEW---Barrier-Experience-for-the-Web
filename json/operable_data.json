@@ -10,18 +10,6 @@
                 "Image_alt": "Alt-Attribut",
                 "function_name": "no_cursor_1"
             }
-        ],
-
-        "Function 2": [
-            {
-                "Headline": "kein Mauscursor 2",
-                "Description": "Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
-                "Image_source": "images/hand_black.png",
-                "Image_alt": "Alt-Attribut",
-                "function_name": "no_cursor_2"
-            }
         ]
     }
 }

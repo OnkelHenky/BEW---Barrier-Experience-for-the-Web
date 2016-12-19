@@ -2,8 +2,8 @@ console.log("contentscript perception_contrast.js gets executed.");
 
 var searchterms = ["body", "div", "span"];
 //Change goal_values for different Guideline
-var goal_contrast_normal =  4.5;
-var goal_contrast_large	 =	3.1;
+var goal_contrast_normal =  7;
+var goal_contrast_large	 =	4.5;
 var large_textsize		 =	18.66;
 
 for(var i=0; i < searchterms.length; i++)
@@ -11,6 +11,7 @@ for(var i=0; i < searchterms.length; i++)
 	var elements_of_searchterm = document.getElementsByTagName(searchterms[i]);
 	for(var j=0; j < elements_of_searchterm.length; j++)
 	{
+		//console.log(elements_of_searchterm[j]);
 		try
 		{
 			var background 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("background-color");
@@ -32,7 +33,7 @@ for(var i=0; i < searchterms.length; i++)
 					background = randomize_color(background);
 					font	   = randomize_color(font);
 					contrast = checkcontrast(background, font);
-			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
 			else
@@ -42,15 +43,17 @@ for(var i=0; i < searchterms.length; i++)
 					background = randomize_color(background);
 					font	   = randomize_color(font);
 					contrast = checkcontrast(background, font);
-			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
+
 			elements_of_searchterm[j].style.backgroundColor = "#" + background;
 			elements_of_searchterm[j].style.color			= "#" + font;
 		}
 		catch(error)
 		{
-			console.log("Calculation is not successfull: " + error);
+			console.log("########################################");
+			//console.log("Calculation is not successfull: " + error);
 		}
 	}
 }
@@ -62,39 +65,22 @@ function fontText_toNumber(text){
 	{
 		number = number + text[i];
 	}
+
 	text = number;
+	
 	return number;
 }
 
 function randomize_color(color){
+
 	var color_value = "";
 	for(var i=0; i<color.length; i++)
 	{	
 		var random_value = Math.floor((Math.random() * 15));
 		color_value = color_value + pickHEXvalue(random_value);
 	}
+		
 	return color_value
-}
-
-
-function HexToNumber(HEX){
-	switch(HEX) 
-	{
-	case "A":
-		return 10;
-	case "B":
-		return 11;
-	case "C":
-		return 12;
-	case "D":		
-		return 13;
-	case "E":
-		return 14;
-	case "F":		
-		return 15;
-	default:
-		return HEX;
-	}
 }
 
 function pickHEXvalue(number){
