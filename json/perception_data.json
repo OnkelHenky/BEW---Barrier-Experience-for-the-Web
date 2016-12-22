@@ -3,11 +3,11 @@
         "function 1": [
             {
                 "Headline": "Kontrastmangel Level - AA",
-                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Description": "Das Kontrastverhältnisses einzelner Webseitenabschnitte wird so manipuliert, das eine Unterscheidung zwischen Hintergrund- und Schriftfarbe nur schwer möglich ist. Das Kontrastminium basiert dabei auf der Empfehlung des W3C und der WCAG 1.4.3. Der Kontrast wird durch eine Helligkeitsreduzierung bewirkt.",
+                "Helping_information": "Die visuelle Darstellung von Text und Bildern von Text hat ein Kontrastverhältnis von mindestens 4,5:1 mit folgenden Ausnahmen: Großer Text: Großer Text und Bilder von großem Text haben ein Kontrastverhältnis von mindestens 3:1; Nebensächlich: Für Text oder Bilder eines Textes, die Teil eines inaktiven Bestandteils der Benutzerschnittstelle, rein dekorativ, für niemanden sichtbar oder Teil eines Bildes sind, welches signifikanten anderen visuellen Inhalt enthält, gibt es keine Kontrastanforderung. Wortbildmarken: Text, der Teil eines Logos oder eines Markennamens ist, hat keine Kontrastanforderungen.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast",
                 "Image_source": "images/auge_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Startbutton für die Funktion perception_contrast_AA_luminance",
                 "function_name": "perception_contrast_AA_luminance"
             }   
         ],
@@ -15,34 +15,34 @@
         "function 2": [
             {
                 "Headline": "Kontrastmangel Level - AAA",
-                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Description": "Das Kontrastverhältnisses einzelner Webseitenabschnitte wird so manipuliert, das eine Unterscheidung zwischen Hintergrund- und Schriftfarbe nur schwer möglich ist. Das Kontrastminium basiert dabei auf der Empfehlung des W3C und der WCAG 1.4.6. Der Kontrast wird durch eine Helligkeitsreduzierung bewirkt.",
+                "Helping_information": "Die visuelle Präsentation von Text und Bildern eines Textes hat ein Kontrastverhältnis von mindestens 7:1, mit folgenden Ausnahmen: Großer Text: Großer Text und Bilder von großem Text haben ein Kontrastverhältnis von mindestens 4,5:1; Nebensächlich: Für Text oder Bilder eines Textes, die Teil eines inaktiven Bestandteils der Benutzerschnittstelle, rein dekorativ, für niemanden sichtbar oder Teil eines Bildes sind, welches signifikanten anderen visuellen Inhalt enthält, gibt es keine Kontrastanforderung. Wortbildmarken: Text, der Teil eines Logos oder eines Markennamens ist, hat keine Mindest-Kontrastanforderungen.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast7",
                 "Image_source": "images/auge_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Startbutton für die Funktion perception_contrast_AAA_luminance",
                 "function_name": "perception_contrast_AAA_luminance"
             }   
         ],
         "function 3": [
             {
-                "Headline": "Kontrastmangel Level - AA (R)",
-                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Headline": "Kontrastmangel Level - AA(R)",
+                "Description": "Das Kontrastverhältnisses einzelner Webseitenabschnitte wird so manipuliert, das eine Unterscheidung zwischen Hintergrund- und Schriftfarbe nur schwer möglich ist. Das Kontrastminium basiert dabei auf der Empfehlung des W3C und der WCAG 1.4.3. Der Kontrast wird durch eine zufällige Farbauswahl bewirkt.",
+                "Helping_information": "Die visuelle Darstellung von Text und Bildern von Text hat ein Kontrastverhältnis von mindestens 4,5:1 mit folgenden Ausnahmen: Großer Text: Großer Text und Bilder von großem Text haben ein Kontrastverhältnis von mindestens 3:1; Nebensächlich: Für Text oder Bilder eines Textes, die Teil eines inaktiven Bestandteils der Benutzerschnittstelle, rein dekorativ, für niemanden sichtbar oder Teil eines Bildes sind, welches signifikanten anderen visuellen Inhalt enthält, gibt es keine Kontrastanforderung. Wortbildmarken: Text, der Teil eines Logos oder eines Markennamens ist, hat keine Kontrastanforderungen.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast-contrast",
                 "Image_source": "images/auge_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Startbutton für die Funktion perception_contrast_AA_randomColor",
                 "function_name": "perception_contrast_AA_randomColor"
             }   
         ],
         
         "function 4": [
             {
-                "Headline": "Kontrastmangel Level - AAA (R)",
-                "Description": "Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1 Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Headline": "Kontrastmangel Level - AAA(R)",
+                "Description": "Das Kontrastverhältnisses einzelner Webseitenabschnitte wird so manipuliert, das eine Unterscheidung zwischen Hintergrund- und Schriftfarbe nur schwer möglich ist. Das Kontrastminium basiert dabei auf der Empfehlung des W3C und der WCAG 1.4.6. Der Kontrast wird durch eine zufällige Farbauswahl bewirkt.",
+                "Helping_information": "Die visuelle Präsentation von Text und Bildern eines Textes hat ein Kontrastverhältnis von mindestens 7:1, mit folgenden Ausnahmen: Großer Text: Großer Text und Bilder von großem Text haben ein Kontrastverhältnis von mindestens 4,5:1; Nebensächlich: Für Text oder Bilder eines Textes, die Teil eines inaktiven Bestandteils der Benutzerschnittstelle, rein dekorativ, für niemanden sichtbar oder Teil eines Bildes sind, welches signifikanten anderen visuellen Inhalt enthält, gibt es keine Kontrastanforderung. Wortbildmarken: Text, der Teil eines Logos oder eines Markennamens ist, hat keine Mindest-Kontrastanforderungen.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-visual-audio-contrast7",
                 "Image_source": "images/auge_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Startbutton für die Funktion perception_contrast_AAA_randomColor",
                 "function_name": "perception_contrast_AAA_randomColor"
             }   
         ]

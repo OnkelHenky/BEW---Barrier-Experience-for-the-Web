@@ -6,7 +6,7 @@ console.log("contentscript gets executed.");
     var ReadingLevel = 60;
 
     //Durchschnittliche Silbenlänge
-    var soll_asl = 3.8;
+    var soll_asl = 2.7;
 
     var elements_of_searchterms;
 

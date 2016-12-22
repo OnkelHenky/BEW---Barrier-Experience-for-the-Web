@@ -3,7 +3,7 @@
         "Function 1": [
             {
                 "Headline": "Textlesbarkeit Teenager",
-                "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren.",
+                "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren. Diese Barriere passt die Texte auf das Leseerlebnis eines Teenagers an.",
                 "Helping_information": "Wenn der Text nach der Entfernung von Eigennamen und Titeln Lesefähigkeiten voraussetzt, die über das Niveau der niedrigen, sekundären Schulbildung hinausgehen, dann gibt es ergänzenden Inhalt oder eine Version, die keine über die niedrige, sekundäre Schulbildung hinausgehenden Lesefähigkeiten verlangt.",
                 "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-meaning-supplements",
                 "Image_source": "images/kopf_black.png",
@@ -14,7 +14,7 @@
         "Function 2": [
             {
                 "Headline": "Textlesbarkeit Kinder",
-                "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren.",
+                "Description": "Diese erfahrbare Barriere analysiert den Text auf die Lesbarkeit. Abhängig vom Lesbarkeitsindex des Textes kann der Text vom Anwender ohne Probleme gelesen werden oder eben nicht. Sollte der Lesbarkeitsindex zu niedrig sein wird der Text Manipuliert um die Lesbarkeit zu erschweren. Diese Barriere passt die Texte auf das Leseerlebnis eines Kindes an.",
                 "Helping_information": "Wenn der Text nach der Entfernung von Eigennamen und Titeln Lesefähigkeiten voraussetzt, die über das Niveau der niedrigen, sekundären Schulbildung hinausgehen, dann gibt es ergänzenden Inhalt oder eine Version, die keine über die niedrige, sekundäre Schulbildung hinausgehenden Lesefähigkeiten verlangt.",
                 "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-meaning-supplements",
                 "Image_source": "images/kopf_black.png",

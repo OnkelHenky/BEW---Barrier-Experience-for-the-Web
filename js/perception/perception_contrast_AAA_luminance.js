@@ -1,6 +1,6 @@
 console.log("contentscript perception_contrast.js gets executed.");
 
-var searchterms = ["body", "div", "span"];
+var searchterms = ["body", "div", "span", "a", "li"];
 //Change goal_values for different Guideline
 var goal_contrast_normal =  7;
 var goal_contrast_large	 =	4.5;
@@ -8,31 +8,36 @@ var large_textsize		 =	18.66;
 
 for(var i=0; i < searchterms.length; i++)
 {
-	var elements_of_searchterm = document.getElementsByTagName(searchterms[i]);
-	for(var j=0; j < elements_of_searchterm.length; j++)
+	var elements_of_searchterms = document.getElementsByTagName(searchterms[i]);
+	for(var j=0; j < elements_of_searchterms.length; j++)
 	{
-		//console.log(elements_of_searchterm[j]);
 		try
 		{
-			var background 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("background-color");
-			console.log(background);
-			background 		= convertRGBtoHEX(background);			
-			var font		= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("color")
+			var background 	= getComputedStyle(elements_of_searchterms[j], null).getPropertyValue("background-color");
+			background 		= convertRGBtoHEX(background);
+
+			var font		= getComputedStyle(elements_of_searchterms[j], null).getPropertyValue("color")
 			font			= convertRGBtoHEX(font);
 
-			var fontsize 	= getComputedStyle(elements_of_searchterm[j], null).getPropertyValue("font-size");
+			var fontsize 	= getComputedStyle(elements_of_searchterms[j], null).getPropertyValue("font-size");
 			fontsize_number	= fontText_toNumber(fontsize);
-			var contrast 	= checkcontrast(background, font);
-
+			var contrast 	= checkcontrast(background, font); 
 			console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
+
 
 			if(fontsize_number > large_textsize)
 			{
+
 				while(contrast > goal_contrast_large)
-				{	
-					background = randomize_color(background);
-					font	   = randomize_color(font);
+				{
+					background = adjustContrast(background);
+					font	   = adjustContrast(font);
+
 					contrast = checkcontrast(background, font);
+					console.log("#" + background);
+					console.log("#" + font);
+					elements_of_searchterms[j].style.backgroundColor = "#" + background;
+					elements_of_searchterms[j].style.color			= "#" + font;
 					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
@@ -40,47 +45,130 @@ for(var i=0; i < searchterms.length; i++)
 			{
 				while(contrast > goal_contrast_normal)
 				{	
-					background = randomize_color(background);
-					font	   = randomize_color(font);
+					background = adjustContrast(background);
+					font	   = adjustContrast(font);
 					contrast = checkcontrast(background, font);
+					console.log("#" + background);
+					console.log("#" + font);
+					elements_of_searchterms[j].style.backgroundColor = "#" + background;
+					elements_of_searchterms[j].style.color			= "#" + font;
 					console.log("fontsize: " + fontsize_number + ", backgroundColor: " + background + ", fontColor: " + font + ", contrast: " + contrast + ":1");
 				}
 			}
-
-			elements_of_searchterm[j].style.backgroundColor = "#" + background;
-			elements_of_searchterm[j].style.color			= "#" + font;
 		}
 		catch(error)
 		{
-			console.log("########################################");
-			//console.log("Calculation is not successfull: " + error);
+			console.log("Calculation is not successfull: " + error);
 		}
 	}
 }
 
-function fontText_toNumber(text){
-	
+function fontText_toNumber(FontTextSize){
 	var number ="";
-	for(var i=0; i<text.length-2; i++)
+	for(var i=0; i<FontTextSize.length-2; i++)
 	{
-		number = number + text[i];
+		number = number + FontTextSize[i];
 	}
-
-	text = number;
-	
+	FontTextSize = number;
 	return number;
 }
 
-function randomize_color(color){
+function adjustContrast(color)
+{	
+	if(getL(color)<0.5)
+	{
+		console.log(getL(color));
+		console.log("increase_luminance");
+		color = increase_luminance(color);
+	}
+	else
+	{	
+		console.log(getL(color));
+		console.log("reduce_luminance");
+		color = reduce_luminance(color);
+	}
 
+	return color;
+}
+
+function reduce_luminance(color){
 	var color_value = "";
 	for(var i=0; i<color.length; i++)
-	{	
-		var random_value = Math.floor((Math.random() * 15));
-		color_value = color_value + pickHEXvalue(random_value);
-	}
+	{
+		console.log("Color: " + color + "| Color.length: " + color.length);
+		var new_value = HexToNumber(color[i]);
+		console.log(new_value);
+		if(new_value == 0)
+		{
+
+		}
+		else
+		{
+			new_value = new_value - 1;
+		}
 		
+		console.log(new_value);
+		color_value = color_value + pickHEXvalue(new_value);
+		console.log(color_value);
+	}
+
 	return color_value
+}
+
+function increase_luminance(color){
+	var color_value = "";
+	for(var i=0; i<color.length; i++)
+	{
+		console.log("Color: " + color + "| Color.length: " + color.length + "| Iteration: " + i);
+		var new_value = HexToNumber(color[i]);
+		console.log(new_value);
+		if(new_value == 15)
+		{
+
+		}
+		else
+		{
+			new_value = new_value + 1;
+		}
+		
+		console.log(new_value);
+		color_value = color_value + pickHEXvalue(new_value);
+		console.log(color_value);
+	}
+
+	return color_value
+}
+
+function HexToNumber(HEX){
+	switch(HEX) 
+	{
+	case "A":
+		return 10;
+	case "B":
+		return 11;
+	case "C":
+		return 12;
+	case "D":		
+		return 13;
+	case "E":
+		return 14;
+	case "F":		
+		return 15;
+	case "a":
+		return 10;
+	case "b":
+		return 11;
+	case "c":
+		return 12;
+	case "d":		
+		return 13;
+	case "e":
+		return 14;
+	case "f":		
+		return 15;
+	default:
+		return parseInt(HEX);
+	}
 }
 
 function pickHEXvalue(number){
@@ -111,8 +199,16 @@ function convertRGBtoHEX(color){
 	}
 	else if(color[3] == "a")
 	{
-		//Convert from rgba to hex
-		//throws error
+		var parts = color.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)$/);
+		delete(parts[0]);
+		for (var i=1; i<=3; ++i)
+		{
+			parts[i] = parseInt(parts[i]).toString(16);
+			if(parts[i].length == 1) parts[i] = '0' + parts[i];
+		}
+		delete(parts[4]);
+
+		color = parts.join('');
 		return color;
 	}
 	else

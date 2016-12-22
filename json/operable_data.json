@@ -2,12 +2,12 @@
     "Operable_data": {
         "Function 1": [
             {
-                "Headline": "keine Mauscursor",
-                "Description": "Text zu Überschrift 1",
-                "Helping_information": "fdghjkjhgfg",
-                "Helping_link": "https://www.google.de/",
+                "Headline": "kein Mauscursor",
+                "Description": "Dem Anwender wird die Möglichkeit genommen die ausgewählte Webseite mit dem Mauscursor zu bedienen. Der Anwender muss auf die Bedienung mit der Tastatur zurückgreifen. Die Manipulation der Webseite erfolgt über die CSS-Eigenschaften pointerEvents und cursor.",
+                "Helping_information": "Sorgen Sie dafür, dass alle Funktionalitäten per Tastatur zugänglich sind. Alle Funktionalitäten des Inhalts sind durch eine Tastaturschnittstelle bedienbar, ohne dass eine bestimmte Zeiteinteilung für einzelne Tastenanschläge erforderlich ist, außer wenn die zugrunde liegende Funktion Eingaben verlangt, die vom Pfad der Bewegung des Benutzers und nicht nur von den Endpunkten abhängig sind. ",
+                "Helping_link": "https://www.w3.org/TR/UNDERSTANDING-WCAG20/keyboard-operation.html",
                 "Image_source": "images/hand_black.png",
-                "Image_alt": "Alt-Attribut",
+                "Image_alt": "Startbutton für die Funktion no_cursor_1",
                 "function_name": "no_cursor_1"
             }
         ]

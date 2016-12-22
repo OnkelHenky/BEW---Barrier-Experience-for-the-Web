@@ -163,7 +163,10 @@ function showInformationBox()
 										Barrier_Link:			Object_value.Helping_link
 									};
 
-							var template = "<h2>{{Barrier_Name}}</h2><div><h3>Beschreibung</h3><p>{{Barrier_Description}}</p></div><div><h3>Hilfsmittel</h3><p>{{Barrier_Information}}</p><a href='{Barrier_Link}' target='blank'>weitere Hilfen</a></div><button type='button' id='start_button'>Barriere starten</button>";
+							var template = `<h2>{{Barrier_Name}}</h2><div><h3>Beschreibung</h3>
+							<p>{{Barrier_Description}}</p></div><div><h3>Hilfsmittel</h3><p>{{Barrier_Information}}</p>
+							<a href='{Barrier_Link}' target='blank'>weitere Hilfen</a></div>
+							<button type='button' id='start_button'>Barriere starten</button>`;
 							
 							var output_position = document.getElementById("barrier_details");
 							

@@ -29,6 +29,6 @@ function perception_contrast_AA_randomColor(){
 function perception_contrast_AAA_randomColor(){
 chrome.tabs.executeScript(
 	{
-		file: 'js/perception/perception_contrast_AAArandomColor.js'
+		file: 'js/perception/perception_contrast_AAA_randomColor.js'
 	}); 
 }

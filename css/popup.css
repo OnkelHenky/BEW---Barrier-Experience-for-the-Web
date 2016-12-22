@@ -1,7 +1,7 @@
 body {
     background-color: white;
     font-family: sans-serif;
-    width: 300px;
+    width:400px;
     height: auto;
 }
 
@@ -10,7 +10,7 @@ body {
 }
 
 #categorys {
-    width: 300px;
+    width: 400px;
 }
 
 #categorys form fieldset{
@@ -73,7 +73,7 @@ body {
 }
 
 #barriers {
-    width: 290px;
+    width: 390px;
     height: auto;
     display: none;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .barrier_div{
-    width: 78px;
+    width: 82px;
     height: 70px;
     margin-top: 10px;
     margin-left: 5px;
@@ -115,7 +115,7 @@ body {
 }
 
 .barrier_label {
-    width: 65px;
+    width: 82px;
     float: left;
     text-align: center;
     margin-top: 5px;
@@ -142,4 +142,8 @@ body {
 .barrier_button img{
     width: 50px;
     height: auto;
+}
+
+#start_button{
+    margin-top: 15px;
 }

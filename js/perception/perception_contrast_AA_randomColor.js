@@ -1,6 +1,6 @@
 console.log("contentscript perception_contrast.js gets executed.");
 
-var searchterms = ["body", "div", "span"];
+var searchterms = ["body", "div", "span", "a"];
 //Change goal_values for different Guideline
 var goal_contrast_normal =  4.5;
 var goal_contrast_large	 =	3.1;
