@@ -3,10 +3,10 @@
   "homepage_url": "http://personabrowser.gpii.eu/",
 
   "manifest_version": 2,
-  "name": "BEW - Barrier Expierence for the Web",
+  "name": "BEW - Barrier Experience for the Web",
   "short_name": "BEW",
   "description": "Mit der Erweiterung ist es möglich durch CSS und Javascript erstellte Barrieren auf Webseiten zu erleben.",
-  "version": "1.2",
+  "version": "1.2.1",
   "icons": { "16": "images/auge_black.png",
              "48": "images/auge_black.png",
             "128": "images/auge_black.png" 
