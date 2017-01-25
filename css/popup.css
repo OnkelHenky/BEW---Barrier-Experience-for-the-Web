@@ -9,21 +9,21 @@ body {
     padding-bottom: 20px;
 }
 
-#categorys {
+#categories {
     width: 400px;
 }
 
-#categorys form fieldset{
+#categories form fieldset{
     padding-bottom: 20px;
     height: 100px;
 }
 
-#categorys form fieldset input{
+#categories form fieldset input{
     visibility: hidden;
     display: none;
 }
 
-#categorys form fieldset input:checked+label {
+#categories form fieldset input:checked+label {
     border-radius: 50%;
     border: 4px solid black;
     width: 50px;
@@ -33,7 +33,7 @@ body {
     float: left;
 }
 
-#categorys form fieldset .category_button {
+#categories form fieldset .category_button {
     border-radius: 50%;
     border: 2px solid black;
     width: 50px;

@@ -5,7 +5,7 @@
   "manifest_version": 3,
   "name": "BEW - Barrier Experience for the Web",
   "short_name": "BEW",
-  "description": "Mit der Erweiterung ist es möglich durch CSS und Javascript erstellte Barrieren auf Webseiten zu erleben.",
+  "description": "Use this extension to experience web barriers first hand",
   "version": "1.3.0",
   "icons": { "16": "images/auge_black.png",
              "48": "images/auge_black.png",
@@ -13,7 +13,7 @@
             },
             
   "browser_action": {
-    "default_locale": "de",
+    "default_locale": "en",
     "default_icon":  "images/auge_black.png",
     "default_title": "Open Barrier Experience 4 Web",
     "default_popup": "popup.html" 
