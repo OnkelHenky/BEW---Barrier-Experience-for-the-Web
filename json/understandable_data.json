@@ -21,6 +21,17 @@
                 "Image_alt": "Augensymbol - öffnet Informationtsbox für die Funktion Textlesbarkeit Kinder",
                 "function_name": "understandable_child"
             }
+        ],
+        "Function 3": [
+            {
+                "Headline": "Textlesbarkeit Dysleia",
+                "Description": "Dyslexia",
+                "Helping_information": "Wenn der Text nach der Entfernung von Eigennamen und Titeln Lesefähigkeiten voraussetzt, die über das Niveau der niedrigen, sekundären Schulbildung hinausgehen, dann gibt es ergänzenden Inhalt oder eine Version, die keine über die niedrige, sekundäre Schulbildung hinausgehenden Lesefähigkeiten verlangt.",
+                "Helping_link": "https://www.w3.org/WAI/WCAG20/quickref/#qr-meaning-supplements",
+                "Image_source": "images/kopf_black.png",
+                "Image_alt": "Augensymbol - öffnet Informationtsbox für die Funktion Textlesbarkeit Dysleia",
+                "function_name": "understandable_dyslexia"
+            }
         ]
     }
 }
