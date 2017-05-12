@@ -1,3 +1,9 @@
+/**
+ *  Creator: Alexander Henka
+ *  Date: 12.05.2017
+ */
+
+
 //Wait until document has loaded
 $(document).ready(function()
 { 
